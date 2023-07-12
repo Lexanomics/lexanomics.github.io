@@ -1254,8 +1254,14 @@ section {
   padding: 2rem 2rem 2rem 2rem;
 }
 
-.team .member-info .bi-linkedin {
+.team .member-info .bi {
   font-size: 30px;
+  padding: 10px;
+  color: #222222;
+}
+
+.team .member-info .bi:hover {
+  color: #2A6796;
 }
 
 /*--------------------------------------------------------------
