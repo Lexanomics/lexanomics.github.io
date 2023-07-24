@@ -1129,10 +1129,12 @@ section {
   background-color: #fff;
   opacity: 1;
   border: 1px solid #225378;
+  padding: 0 0 15px 0;
 }
 
 .portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
   background-color: #225378;
+  padding: 0 0 15px 0;
 }
 
 .portfolio-details .portfolio-info {
@@ -1170,6 +1172,12 @@ section {
 
 .portfolio-details .portfolio-description p {
   padding: 0;
+  text-align: justify;
+}
+
+.portfolio-details .gy-4 {
+    display: flex;
+    align-items: center;
 }
 
 /*--------------------------------------------------------------
@@ -1552,7 +1560,7 @@ section {
 --------------------------------------------------------------*/
 .breadcrumbs {
   padding: 15px 0;
-  background: #f8f8f8;
+  background: #f3f9fd;
   min-height: 40px;
   margin-top: 86px;
 }
