@@ -773,13 +773,14 @@ section {
 }
 
 /*--------------------------------------------------------------
-# More Services
+# Posts
 --------------------------------------------------------------*/
-.more-services {
+.posts {
   padding-top: 20px;
+  background: #f3f9fd;
 }
 
-.more-services .card {
+.posts .card {
   border: 0;
   padding: 160px 20px 20px 20px;
   position: relative;
@@ -789,7 +790,7 @@ section {
   background-position: center center;
 }
 
-.more-services .card-body {
+.posts .card-body {
   z-index: 10;
   background: rgba(255, 255, 255, 0.9);
   padding: 15px 30px;
@@ -799,21 +800,21 @@ section {
   border-radius: 5px;
 }
 
-.more-services .card-title {
+.posts .card-title {
   font-weight: 700;
   text-align: center;
   margin-bottom: 15px;
 }
 
-.more-services .card-title a {
+.posts .card-title a {
   color: #222222;
 }
 
-.more-services .card-text {
+.posts .card-text {
   color: #5e5e5e;
 }
 
-.more-services .read-more a {
+.posts .read-more a {
   color: #777777;
   text-transform: uppercase;
   font-weight: 600;
@@ -821,18 +822,18 @@ section {
   transition: 0.4s;
 }
 
-.more-services .read-more a:hover {
+.posts .read-more a:hover {
   text-decoration: underline;
 }
 
-.more-services .card:hover .card-body {
+.posts .card:hover .card-body {
   background: #225378;
 }
 
-.more-services .card:hover .read-more a,
-.more-services .card:hover .card-title,
-.more-services .card:hover .card-title a,
-.more-services .card:hover .card-text {
+.posts .card:hover .read-more a,
+.posts .card:hover .card-title,
+.posts .card:hover .card-title a,
+.posts .card:hover .card-text {
   color: #fff;
 }
 
@@ -1183,6 +1184,10 @@ section {
 /*--------------------------------------------------------------
 # Team
 --------------------------------------------------------------*/
+.team {
+  background: #fff;
+}
+
 .team .member {
   margin-bottom: 20px;
   overflow: hidden;
