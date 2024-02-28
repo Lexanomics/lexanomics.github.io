@@ -2,15 +2,22 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "blog",
+    "title": "Lexanomics Blog",
     "section": "",
-    "text": "Welcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nFeb 22, 2024\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
+    "text": "Why to sequence the DNA?\n\n\n\n\n\n\ndnaseq\n\n\n\n\n\n\n\n\n\nMar 1, 2024\n\n\nDiego M. Coelho\n\n\n\n\n\n\n\n\n\n\n\n\nAre you aware of RNA sequencing analysis?\n\n\n\n\n\n\nrnaseq\n\n\n\n\n\n\n\n\n\nFeb 29, 2024\n\n\nDiego M. Coelho\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
+    "objectID": "posts/2024-02-29/index.html",
+    "href": "posts/2024-02-29/index.html",
+    "title": "Are you aware of RNA sequencing analysis?",
     "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+    "text": "Sequencing technologies have revolutionized our understanding of human and other organisms’ biology. By having access to the transcriptome, one can have insights into the cellular functional alterations in different metabolic scenarios. From gene expression, one can perform many possible analyses, such as:\n🧬 Differential expression analysis, to compare the expression levels of genes in case-control scenarios, making possible the identification of biomarkers and gene signatures;\n🔍 Functional enrichment analysis and gene set enrichment analysis (GSEA), to understand the impact of transcriptional alterations in cellular pathways;\n🤝 Co-expression analysis, to gather gene modules collectively expressed in a given condition;\n🔄 Protein-protein interaction networks, to understand how gene targets interact with each other in a functional and/or physical way;\n📊 Expression deconvolution, to infer cell type proportions from curated reference panels;\n🔗 Construction of regulatory networks, to understand how regulatory elements, such as transcription factors and non-coding RNAs, impact the transcriptional profile of a given condition.\nHere in Lexanomics, we have extensive experience in preprocessing RNA-Seq data using gold-standard bioinformatics tools and protocols, which can help you increase your research’s impact. Let’s advance together! 🚀 #Lexanomics #RNAseq #Bioinformatics #Research"
+  },
+  {
+    "objectID": "posts/2024-03-01/index.html",
+    "href": "posts/2024-03-01/index.html",
+    "title": "Why to sequence the DNA?",
+    "section": "",
+    "text": "There are many different DNA sequencing technologies, all of them with their potentialities. However, do you know some of the main use cases for DNA sequencing?\n🧬 Genomic research: By sequencing the whole genome (WGS) or the exome (WES), one can understand the organism’s genetic architecture;\n💉 Medical diagnostics: DNA sequencing can identify mutations and variations associated with genetic disorders, allowing for early diagnosis and personalized treatment plans;\n💊 Pharmacogenomics: Understanding how an individual’s genetic makeup influences their response to drugs helps tailor medication plans for maximum efficacy and minimal side effects;\n🕵️‍♂️ Forensic analysis: DNA sequencing is used in forensic investigations to identify individuals, establish paternity, and solve criminal cases by analyzing biological evidence such as hair, blood, or saliva.\n👪 Ancestry and Genealogy: DNA sequencing, particularly in the form of consumer genetic testing, is used to trace familial and ancestral relationships, providing insights into personal heritage and ancestry;\n🦠 Microbial and environmental analysis: Sequencing the genomes of bacteria, viruses, and other microorganisms helps understand their biology and develop targeted treatments. Also, with DNA sequencing, it is possible to identify microorganisms in environmental samples, such as soil or water, helps monitor biodiversity, identify species presence, and assess ecosystem health;\n🦴 Evolutionary Biology: Sequencing the genome of viruses and bacteria allows us to develop more precise hypotheses regarding the spread of pathogens responsible for the development of infectious diseases. Also sequencing ancient DNA from fossils and archaeological remains contributes to our understanding of evolutionary processes and the history of life on Earth.\nThe Lexanomics team is experienced in all DNA sequencing analyses. If you want to know more about them, contact us! #DNAsequencing #Bioinformatics #Lexanomics 🧬🔬📊"
   }
 ]

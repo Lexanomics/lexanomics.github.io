@@ -2,10 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.lexanomics.com/index.html</loc>
-    <lastmod>2024-02-26T02:12:41.799Z</lastmod>
+    <lastmod>2024-02-28T02:17:36.329Z</lastmod>
   </url>
   <url>
-    <loc>https://www.lexanomics.com/posts/welcome/index.html</loc>
-    <lastmod>2024-02-26T02:10:07.107Z</lastmod>
+    <loc>https://www.lexanomics.com/posts/2024-02-29/index.html</loc>
+    <lastmod>2024-02-28T02:48:59.409Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.lexanomics.com/posts/2024-03-01/index.html</loc>
+    <lastmod>2024-02-28T02:49:17.749Z</lastmod>
   </url>
 </urlset>
