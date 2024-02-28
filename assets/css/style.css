@@ -776,8 +776,12 @@ section {
 # Posts
 --------------------------------------------------------------*/
 .posts {
-  padding-top: 20px;
   background: #f3f9fd;
+}
+
+.posts .row {
+  display: flex;
+  align-items: center;
 }
 
 .posts .card {
@@ -835,6 +839,19 @@ section {
 .posts .card:hover .card-title a,
 .posts .card:hover .card-text {
   color: #fff;
+}
+
+.posts .btn-get-started {
+  font-family: "Raleway", sans-serif;
+  font-weight: 1000;
+  font-size: 25px;
+  letter-spacing: 1px;
+  background: #fff;
+  padding: 20px 70px;
+  border-radius: 5px;
+  transition: 0.5s;
+  color: #225378;
+  border: 3px solid #225378;
 }
 
 /*--------------------------------------------------------------
