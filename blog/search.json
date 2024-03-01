@@ -1,0 +1,16 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Lexanomics Blog",
+    "section": "",
+    "text": "Analysing the cell transcriptional profile at the single-cell resolution\n\n\n\n\n\n\nscRNA-seq\n\n\n\n\n\n\n\n\n\nFeb 29, 2024\n\n\nIara Souza\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/2024-02-29/index.html",
+    "href": "posts/2024-02-29/index.html",
+    "title": "Analysing the cell transcriptional profile at the single-cell resolution",
+    "section": "",
+    "text": "Single-cell RNA-seq analysis is a powerful technique used in biology and medicine to study the gene expression of individual cells within a population. Single-cell gene expression analysis and bulk RNA-seq differ primarily in the scale and resolution of the analysis. Single-cell gene expression analysis focuses on individual cells, providing insights into cellular heterogeneity and rare cell populations. In contrast, bulk RNA-seq measures the average gene expression of a population of cells, masking cellular diversity. Single-cell analysis requires specialized methods to isolate and analyze individual cells, while bulk RNA-seq is more straightforward and commonly used for analyzing gene expression in larger cell populations.\nBesides producing beautiful visualizations (La Manno et al. 2021), single-cell data has revolutionized the information regarding cell biology, with direct applications to the understanding of cell development and human diseases.\n\n\n\nt-SNE representation for cell types development in mouse brain. Figure from (La Manno et al. 2021).\n\n\nHere’s some use cases for single-cell data:\n\nCellular Heterogeneity 🧬: Understand the complex biological processes such as development, disease progression, and immune responses.\nDevelopmental Biology 🌱: Insights into the molecular mechanisms underlying cell differentiation and development.\nCancer Research 🦠: Study tumor heterogeneity, identify rare subpopulations of cells, and track the evolution of cancer cells over time or in response to treatment.\nNeuroscience 🧠: Map the cellular diversity of the brain, identify different cell types, and understand how they function in both healthy and diseased states.\nImmunology 🦠: Study immune cell diversity, activation states, and responses to stimuli.\nStem Cell Biology 🌱: Study the properties of stem cells, such as self-renewal and differentiation potential, and identify markers for specific cell types.\nDrug Discovery and Development 💊: Identify new drug targets, understand drug resistance mechanisms, and optimize drug development pipelines.\n\nSingle-cell opened a world to new discoveries. Do you need help with analysing single-cell data? Schedule a meeting with the Lexanomics consultants!\n\n\n\n\nReferences\n\nLa Manno, Gioele, Kimberly Siletti, Alessandro Furlan, Daniel Gyllborg, Elin Vinsland, Alejandro Mossi Albiach, Christoffer Mattsson Langseth, et al. 2021. “Molecular Architecture of the Developing Mouse Brain.” Nature 596 (7870): 92–96. https://doi.org/10.1038/s41586-021-03775-x."
+  }
+]
