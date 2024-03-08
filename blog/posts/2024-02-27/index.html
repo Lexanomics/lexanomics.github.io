@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Iara Souza">
-<meta name="dcterms.date" content="2024-02-29">
+<meta name="dcterms.date" content="2024-02-27">
 
-<title>Lexanomics Blog - Analysing the cell transcriptional profile at the single-cell resolution</title>
+<title>Lexanomics Blog - Are you aware about RNA sequencing analysis?</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,27 +22,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -135,7 +115,7 @@ div.csl-indent {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Analysing the cell transcriptional profile at the single-cell resolution</h1>
+      <h1 class="title">Are you aware about RNA sequencing analysis?</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">bioinfo-trends</div>
                 <div class="quarto-category">sequencing-technologies</div>
@@ -156,7 +136,7 @@ div.csl-indent {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">February 29, 2024</p>
+        <p class="date">February 27, 2024</p>
       </div>
     </div>
     
@@ -175,38 +155,24 @@ div.csl-indent {
 
 
 
-<style>
-body {
-text-align: justify}
-</style>
-<p>Single-cell RNA-seq analysis is a powerful technique used in biology and medicine to study the gene expression of individual cells within a population. Single-cell gene expression analysis and bulk RNA-seq differ primarily in the scale and resolution of the analysis. Single-cell gene expression analysis focuses on individual cells, providing insights into cellular heterogeneity and rare cell populations. In contrast, bulk RNA-seq measures the average gene expression of a population of cells, masking cellular diversity. Single-cell analysis requires specialized methods to isolate and analyze individual cells, while bulk RNA-seq is more straightforward and commonly used for analyzing gene expression in larger cell populations.</p>
-<p>Besides producing beautiful visualizations <span class="citation" data-cites="LaManno2021">(<a href="#ref-LaManno2021" role="doc-biblioref">La Manno et al. 2021</a>)</span>, single-cell data has revolutionized the information regarding cell biology, with direct applications to the understanding of cell development and human diseases.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="fig1.jpeg" alt="Single-cell graph with similarities with a map" width="700" height="700" class="figure-img"></p>
-<figcaption>t-SNE representation for cell types development in mouse brain. Figure from <span class="citation" data-cites="LaManno2021">(<a href="#ref-LaManno2021" role="doc-biblioref">La Manno et al. 2021</a>)</span>.</figcaption>
+<p><img src="fig1.jpg" class="img-fluid figure-img"></p>
+<figcaption>Imagem de DC Studio no <a href="https://br.freepik.com/fotos-gratis/close-de-um-cientista-analisando-o-vacutainer-de-laboratorio-com-fluido_16790889.htm#fromView=search&amp;page=1&amp;position=40&amp;uuid=9dc2630b-8eb8-49b3-99bc-2ff7c1ffabec">Freepik</a></figcaption>
 </figure>
 </div>
-<p>Here’s some use cases for single-cell data:</p>
-<ul>
-<li><p><strong>Cellular Heterogeneity</strong> 🧬: Understand the complex biological processes such as development, disease progression, and immune responses.</p></li>
-<li><p><strong>Developmental Biology</strong> 🌱: Insights into the molecular mechanisms underlying cell differentiation and development.</p></li>
-<li><p><strong>Cancer Research</strong> 🦠: Study tumor heterogeneity, identify rare subpopulations of cells, and track the evolution of cancer cells over time or in response to treatment.</p></li>
-<li><p><strong>Neuroscience</strong> 🧠: Map the cellular diversity of the brain, identify different cell types, and understand how they function in both healthy and diseased states.</p></li>
-<li><p><strong>Immunology</strong> 🦠: Study immune cell diversity, activation states, and responses to stimuli.</p></li>
-<li><p><strong>Stem Cell Biology</strong> 🌱: Study the properties of stem cells, such as self-renewal and differentiation potential, and identify markers for specific cell types.</p></li>
-<li><p><strong>Drug Discovery and Development</strong> 💊: Identify new drug targets, understand drug resistance mechanisms, and optimize drug development pipelines.</p></li>
-</ul>
-<p>Single-cell opened a world to new discoveries. Do you need help with analysing single-cell data? Schedule a meeting with the Lexanomics consultants!</p>
+<p>Sequencing technologies have revolutionized our understanding of human and other organisms’ biology. By having access to the transcriptome, one can have insights about the cellular functional alterations in different metabolic scenarios. From gene expression data, various analyses can be conducted, including:</p>
+<p>🧬 <strong>Differential expression analysis</strong>, to compare the expression levels of genes in case-control scenarios, making possible the identification of biomarkers and gene signatures;</p>
+<p>🔍 <strong>Functional enrichment analysis</strong> and <strong>gene set enrichment analysis (GSEA)</strong>, to understand the impact of transcriptional alterations in cellular pathways and metabolic context;</p>
+<p>🤝 <strong>Co-expression analysis</strong>, to gather gene modules collectively expressed in a given condition;</p>
+<p>🔄 <strong>Protein-protein interaction networks</strong>, to understand how gene targets interact with each other in a functional and/or physical way;</p>
+<p>📊 <strong>Expression deconvolution</strong>, to infer cell type proportions from curated reference panels;</p>
+<p>🔗 <strong>Construction of regulatory networks</strong>, to understand how regulatory elements, such as transcription factors and non-coding RNAs, impact the transcriptional profile of a given condition.</p>
+<p>Here in Lexanomics, we have extensive experience in preprocessing RNA-Seq data by using gold-standard bioinformatics tools and protocols, which can help you to increase the impact of your research. Let’s advance together! 🚀 #Lexanomics #RNAseq #Bioinformatics #Research</p>
 
 
 
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-LaManno2021" class="csl-entry" role="listitem">
-La Manno, Gioele, Kimberly Siletti, Alessandro Furlan, Daniel Gyllborg, Elin Vinsland, Alejandro Mossi Albiach, Christoffer Mattsson Langseth, et al. 2021. <span>“Molecular Architecture of the Developing Mouse Brain.”</span> <em>Nature</em> 596 (7870): 92–96. <a href="https://doi.org/10.1038/s41586-021-03775-x">https://doi.org/10.1038/s41586-021-03775-x</a>.
-</div>
-</div></section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
