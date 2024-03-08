@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.lexanomics.com/posts/2024-03-02/index.html</loc>
-    <lastmod>2024-03-06T02:54:11.750Z</lastmod>
+    <loc>https://www.lexanomics.com/index.html</loc>
+    <lastmod>2024-03-08T14:01:13.604Z</lastmod>
   </url>
   <url>
-    <loc>https://www.lexanomics.com/index.html</loc>
-    <lastmod>2024-03-06T02:54:11.746Z</lastmod>
+    <loc>https://www.lexanomics.com/posts/2024-03-02/index.html</loc>
+    <lastmod>2024-03-08T14:01:13.612Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.lexanomics.com/posts/2024-03-08/index.html</loc>
+    <lastmod>2024-03-08T14:01:13.612Z</lastmod>
   </url>
   <url>
     <loc>https://www.lexanomics.com/posts/2024-02-29/index.html</loc>
-    <lastmod>2024-03-06T02:54:11.746Z</lastmod>
+    <lastmod>2024-03-08T14:01:13.608Z</lastmod>
   </url>
 </urlset>

@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Lexanomics Blog",
+    "section": "",
+    "text": "Why to sequence the DNA?\n\n\n\n\n\n\nbioinfo-trends\n\n\nsequencing-technologies\n\n\n\n\n\n\n\n\n\nMar 8, 2024\n\n\nIara Souza\n\n\n\n\n\n\n\n\n\n\n\n\nJumping genetic element getting in the way of primates tail evolution\n\n\n\n\n\n\nawesome science\n\n\n\n\n\n\n\n\n\nMar 3, 2024\n\n\nIara Souza\n\n\n\n\n\n\n\n\n\n\n\n\nAnalysing the cell transcriptional profile at the single-cell resolution\n\n\n\n\n\n\nscRNA-seq\n\n\n\n\n\n\n\n\n\nFeb 29, 2024\n\n\nIara Souza\n\n\n\n\n\n\nNo matching items"
+  },
+  {
     "objectID": "posts/2024-03-02/index.html",
     "href": "posts/2024-03-02/index.html",
     "title": "Jumping genetic element getting in the way of primates tail evolution",
@@ -7,11 +14,11 @@
     "text": "It is of common knowledge that humans and monkeys share great similarities regarding their genomes. And, if most monkeys have tails, what happend to ours? This is the central question Xia and colleagues (Xia et al. 2024) try to answer.\nAfter comparing the genomic sequences across primates, the researchers found a mobile genetic element called Alu only inserted on the gene TBXT of apes, a gene that encodes for a transcription factor associated with tail development in mammals. Alu elements have the ability of “teleporting” and fixating in other genome regions and therefore they are very important to diversify genome sequences. The Alu element insertion found in apes leads to an alternative splicing event, resulting in the production of a shortened form of the TBXT gene. Humans express both the full-length and the shortened versions of TBXT gene.\n\n\n\nEvolution of tails in primates. Figure from Xia et al, 2024.\n\n\nTo test their hypothesis, researchers engineered mice to express these two gene versions and they observed that, in this scenario, mice exhibit a lack of a tail or a shortened tail, similar to the tail-loss phenotype in hominoids. However, for mice engineered to have only the shortened version of TBXT gene died during the embryonic development. This suggests that the evolution of tail loss in hominoids may have been associated with an adaptive trade-off, where the loss of the tail conferred evolutionary advantages but also increased the risk of neural tube defects.\n\n\n\nFrom SMBC comics (https://www.smbc-comics.com/).\n\n\nThis research is a great example of comparative genome analysis, common in the Bioinformatics area. Do you need help in comparing genomes? Talk to the Lexanomics team!\n\n\n\n\nReferences\n\nXia, B., W. Zhang, G. Zhao, et al. 2024. “On the Genetic Basis of Tail-Loss Evolution in Humans and Apes.” Nature 626: 1042–48. https://doi.org/10.1038/s41586-024-07095-8."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Lexanomics Blog",
+    "objectID": "posts/2024-03-08/index.html",
+    "href": "posts/2024-03-08/index.html",
+    "title": "Why to sequence the DNA?",
     "section": "",
-    "text": "Jumping genetic element getting in the way of primates tail evolution\n\n\n\n\n\n\nawesome science\n\n\n\n\n\n\n\n\n\nMar 3, 2024\n\n\nIara Souza\n\n\n\n\n\n\n\n\n\n\n\n\nAnalysing the cell transcriptional profile at the single-cell resolution\n\n\n\n\n\n\nscRNA-seq\n\n\n\n\n\n\n\n\n\nFeb 29, 2024\n\n\nIara Souza\n\n\n\n\n\n\nNo matching items"
+    "text": "There are many different DNA sequencing technologies, all of them with their potentialities. However, do you know some of the main use cases for DNA sequencing?\n\n\n\nDesigned by Freepik\n\n\n🧬 Genomic research: By sequencing the whole genome (WGS) or the exome (WES), one can understand the organism’s genetic architecture;\n💉 Medical diagnostics: DNA sequencing can identify mutations and variations associated with genetic disorders, allowing for early diagnosis and personalized treatment plans;\n💊 Pharmacogenomics: Understanding how an individual’s genetic makeup influences their response to drugs helps tailor medication plans for maximum efficacy and minimal side effects;\n🕵️‍♂️ Forensic analysis: DNA sequencing is used in forensic investigations to identify individuals, establish paternity, and solve criminal cases by analyzing biological evidence such as hair, blood, or saliva.\n👪 Ancestry and Genealogy: DNA sequencing, particularly in the form of consumer genetic testing, is used to trace familial and ancestral relationships, providing insights into personal heritage and ancestry;\n🦠 Microbial and environmental analysis: Sequencing the genomes of bacteria, viruses, and other microorganisms helps understand their biology and develop targeted treatments. Also, with DNA sequencing, it is possible to identify microorganisms in environmental samples, such as soil or water, helps monitor biodiversity, identify species presence, and assess ecosystem health;\n🦴 Evolutionary Biology: Sequencing the genome of viruses and bacteria allows us to develop more precise hypotheses regarding the spread of pathogens responsible for the development of infectious diseases. Also sequencing ancient DNA from fossils and archaeological remains contributes to our understanding of evolutionary processes and the history of life on Earth.\nThe Lexanomics team is experienced in all DNA sequencing analyses. If you want to know more about them, contact us! #DNAsequencing #Bioinformatics #Lexanomics 🧬🔬📊"
   },
   {
     "objectID": "posts/2024-02-29/index.html",
