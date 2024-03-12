@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Diego Teixeira">
+<meta name="dcterms.date" content="2024-03-12">
 
-<title>Lexanomics Blog</title>
+<title>Lexanomics Blog - Unveiling the Beginning of the Pandemic: The Transformative Role of Meta-Transcriptomics in Pathogen Identification</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,27 +22,45 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,76 +88,18 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Lexanomics Blog</span>
     </a>
   </div>
@@ -170,239 +132,73 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Unveiling the Beginning of the Pandemic: The Transformative Role of Meta-Transcriptomics in Pathogen Identification</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">awesome science</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Diego Teixeira </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">March 12, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(6)</span></div><div class="category" data-category="awesome science">awesome science <span class="quarto-category-count">(2)</span></div><div class="category" data-category="bioinfo-trends">bioinfo-trends <span class="quarto-category-count">(4)</span></div><div class="category" data-category="sequencing-technologies">sequencing-technologies <span class="quarto-category-count">(4)</span></div></div></div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
+<style>
+body {
+text-align: justify}
+</style>
+<p>The year 2020 will forever be remembered as the starting point of the COVID-19 pandemic, declared by the World Health Organization. A revolution in the speed of information generation marked this period, especially concerning the characterization of SARS-CoV-2 and the understanding of COVID-19.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig1.jpg" class="img-fluid figure-img"></p>
+<figcaption>Designed by <a href="http://www.freepik.com/">Freepik</a></figcaption>
+</figure>
+</div>
+<p>In just 12 days, from the hospital admission of a patient with characteristic COVID-19 symptoms to the publication in the prestigious journal Nature, the process of characterizing SARS-CoV-2 was remarkably efficient. In the study titled A New Coronavirus Associated with Human Respiratory Disease in China by Wu and collaborators <span class="citation" data-cites="wu2020new">(<a href="#ref-wu2020new" role="doc-biblioref">Wu et al. 2020</a>)</span>, an advanced analytical method took center stage: meta-transcriptomics.</p>
+<p>To better comprehend the pathogen infecting the patient, researchers employed high-coverage meta-transcriptomic sequencing through the Illumina MiniSeq platform. The biological sample from bronchoalveolar lavage fluid underwent de novo contig assembly, revealing a 30,474-nucleotide sequence closely related to the SARS-like coronavirus genome found in bats (CoV) and recorded in the GenBank.</p>
+<p>The identified virus was named WH-Human 1 coronavirus (WHCV). Analysis of the viral sequence not only allowed for the inference of the transmission route but also uncovered mutations in the receptor-binding domain (RBD) of the SPIKE protein. This mutation was crucial, enabling the viral lineage to bind to the ACE2 protein and thus infect human cells. Additionally, the research traced the evolutionary events that gave rise to the virus later known as SARS-CoV-2.</p>
+<p>This study stands as a remarkable example of how contemporary sequencing techniques, combined with careful analysis of biological data tools, play a vital role in the early detection of pathogens and the timely identification of agents capable of triggering local or global outbreaks.</p>
+<p>Stay updated on <strong>metatranscriptomics</strong>, <strong>metagenomics</strong>, <strong>NGS</strong>, <strong>pathogens</strong>, <strong>virus</strong>, and <strong>COVID-19</strong>, and discover how science is unveiling the secrets behind global health threats.</p>
 
 
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="awesome science" data-listing-date-sort="1710201600000" data-listing-file-modified-sort="1710261061133" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="288">
-<div class="thumbnail">
-<p><a href="./posts/2024-03-12/index.html" class="no-external"></a></p><a href="./posts/2024-03-12/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/2024-03-12/fig1.jpg"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/2024-03-12/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2024-03-12/index.html" class="no-external">Unveiling the Beginning of the Pandemic: The Transformative Role of Meta-Transcriptomics in Pathogen Identification</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2024-03-12/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('awesome science'); return false;">
-awesome science
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/2024-03-12/index.html" class="no-external">The year 2020 will forever be remembered as the starting point of the COVID-19 pandemic, declared by the World Health Organization. A revolution in the speed of information…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2024-03-12/index.html" class="no-external">
-<div class="listing-date">
-Mar 12, 2024
-</div>
-<div class="listing-author">
-Diego Teixeira
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="bioinfo-trends,sequencing-technologies" data-listing-date-sort="1709856000000" data-listing-file-modified-sort="1710261061129" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="275">
-<div class="thumbnail">
-<p><a href="./posts/2024-03-08/index.html" class="no-external"></a></p><a href="./posts/2024-03-08/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/2024-03-08/fig1.jpg"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/2024-03-08/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2024-03-08/index.html" class="no-external">Why to sequence the DNA?</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2024-03-08/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('bioinfo-trends'); return false;">
-bioinfo-trends
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('sequencing-technologies'); return false;">
-sequencing-technologies
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/2024-03-08/index.html" class="no-external">There are many different DNA sequencing technologies, all of them with their potentialities. However, do you know some of the main use cases for DNA sequencing?</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2024-03-08/index.html" class="no-external">
-<div class="listing-date">
-Mar 8, 2024
-</div>
-<div class="listing-author">
-Iara Souza
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="awesome science" data-listing-date-sort="1709424000000" data-listing-file-modified-sort="1710261061129" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="281">
-<div class="thumbnail">
-<p><a href="./posts/2024-03-02/index.html" class="no-external"></a></p><a href="./posts/2024-03-02/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/2024-03-02/fig1.jpeg" alt="Three graphs showing evolutionary relationships of primates regarding the tail gene."  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/2024-03-02/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2024-03-02/index.html" class="no-external">Jumping genetic element getting in the way of primates tail evolution</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2024-03-02/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('awesome science'); return false;">
-awesome science
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/2024-03-02/index.html" class="no-external">It is of common knowledge that humans and monkeys share great similarities regarding their genomes. And, if most monkeys have tails, what happend to ours? This is the…<span class="citation" data-cites="xia2024"></span></a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2024-03-02/index.html" class="no-external">
-<div class="listing-date">
-Mar 3, 2024
-</div>
-<div class="listing-author">
-Iara Souza
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="bioinfo-trends,sequencing-technologies" data-listing-date-sort="1709164800000" data-listing-file-modified-sort="1710261061125" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="308">
-<div class="thumbnail">
-<p><a href="./posts/2024-02-29/index.html" class="no-external"></a></p><a href="./posts/2024-02-29/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/2024-02-29/fig1.jpeg" alt="Single-cell graph with similarities with a map"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/2024-02-29/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2024-02-29/index.html" class="no-external">Analysing the cell transcriptional profile at the single-cell resolution</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2024-02-29/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('bioinfo-trends'); return false;">
-bioinfo-trends
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('sequencing-technologies'); return false;">
-sequencing-technologies
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/2024-02-29/index.html" class="no-external">Single-cell RNA-seq analysis is a powerful technique used in biology and medicine to study the gene expression of individual cells within a population. Single-cell gene…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2024-02-29/index.html" class="no-external">
-<div class="listing-date">
-Feb 29, 2024
-</div>
-<div class="listing-author">
-Iara Souza
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="bioinfo-trends,sequencing-technologies" data-listing-date-sort="1709078400000" data-listing-file-modified-sort="1710261061125" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="292">
-<div class="thumbnail">
-<p><a href="./posts/2024-02-28/index.html" class="no-external"></a></p><a href="./posts/2024-02-28/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/2024-02-28/fig1.jpg"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/2024-02-28/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2024-02-28/index.html" class="no-external">A new look into microorganisms by the lens of metagenomics</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2024-02-28/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('bioinfo-trends'); return false;">
-bioinfo-trends
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('sequencing-technologies'); return false;">
-sequencing-technologies
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/2024-02-28/index.html" class="no-external">Have you ever heard that a great percentage of our body composition comes from the microorganisms living with us? Recent research suggests a 1:1 ratio for the number of…<span class="citation" data-cites="SENDER2016337"></span></a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2024-02-28/index.html" class="no-external">
-<div class="listing-date">
-Feb 28, 2024
-</div>
-<div class="listing-author">
-Iara Souza
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="bioinfo-trends,sequencing-technologies" data-listing-date-sort="1708992000000" data-listing-file-modified-sort="1710261061121" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="191">
-<div class="thumbnail">
-<p><a href="./posts/2024-02-27/index.html" class="no-external"></a></p><a href="./posts/2024-02-27/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/2024-02-27/fig1.jpg"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/2024-02-27/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2024-02-27/index.html" class="no-external">Are you aware about RNA sequencing analysis?</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2024-02-27/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('bioinfo-trends'); return false;">
-bioinfo-trends
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('sequencing-technologies'); return false;">
-sequencing-technologies
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/2024-02-27/index.html" class="no-external">Sequencing technologies have revolutionized our understanding of human and other organisms’ biology. By having access to the transcriptome, one can have insights about the…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2024-02-27/index.html" class="no-external">
-<div class="listing-date">
-Feb 27, 2024
-</div>
-<div class="listing-author">
-Iara Souza
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-wu2020new" class="csl-entry" role="listitem">
+Wu, F., S. Zhao, B. Yu, and et al. 2020. <span>“A New Coronavirus Associated with Human Respiratory Disease in China.”</span> <em>Nature</em> 579: 265–69. <a href="https://doi.org/10.1038/s41586-020-2008-3">https://doi.org/10.1038/s41586-020-2008-3</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
