@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Lexanomics">
+<meta name="dcterms.date" content="2024-03-14">
 
-<title>Lexanomics Blog</title>
+<title>Lexanomics Blog - Data interoperability for single-cell analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,27 +22,59 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,76 +102,18 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Lexanomics Blog</span>
     </a>
   </div>
@@ -170,272 +146,140 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Data interoperability for single-cell analysis</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">debbuging new</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Lexanomics </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">March 14, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(7)</span></div><div class="category" data-category="awesome science">awesome science <span class="quarto-category-count">(2)</span></div><div class="category" data-category="bioinfo-trends">bioinfo-trends <span class="quarto-category-count">(4)</span></div><div class="category" data-category="debbuging new">debbuging new <span class="quarto-category-count">(1)</span></div><div class="category" data-category="sequencing-technologies">sequencing-technologies <span class="quarto-category-count">(4)</span></div></div></div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
+<section id="interoperability-on-seurat-v5" class="level1">
+<h1>Interoperability on Seurat V5</h1>
+<p>Seurat is undoubtedly the most used package for single-cell analysis. However, the single-cell field has changed towards new programming languages and packages (e.g., Scanpy), which leads to an issue regarding <strong>interoperability </strong>, i.e., the ability of software to exchange and make use of information. Here, we show how to quickly convert Seurat objects from ongoing projects to AnnData (Scanpy data object).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="post.png" class="img-fluid quarto-figure quarto-figure-center figure-img" data-heigh="300,"></p>
+</figure>
+</div>
+<section id="loading-requirements" class="level2">
+<h2 class="anchored" data-anchor-id="loading-requirements">1. Loading requirements</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Seurat)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sceasy)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Setting Assay version 5</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">Seurat.object.assay.version =</span> <span class="st">"v5"</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the PBMC dataset - available at 10x datasets website</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>pbmc.data <span class="ot">&lt;-</span> <span class="fu">Read10X</span>(</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">data.dir =</span> <span class="st">"/Users/affaustino/Projects/UTILS/quarto_blog/data/filtered_gene_bc_matrices/hg19"</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize the Seurat object with the raw (non-normalized data).</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>pbmc_seurat <span class="ot">&lt;-</span> <span class="fu">CreateSeuratObject</span>(</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">counts =</span> pbmc.data, <span class="at">project =</span> <span class="st">"pbmc3k"</span>, <span class="at">min.cells =</span> <span class="dv">3</span>, <span class="at">min.features =</span> <span class="dv">200</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The [[ operator can add columns to object metadata. This is a great place to stash QC stats</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>pbmc_seurat[[<span class="st">"percent_mt"</span>]] <span class="ot">&lt;-</span> <span class="fu">PercentageFeatureSet</span>(pbmc_seurat, <span class="at">pattern =</span> <span class="st">"^MT-"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>pbmc_seurat <span class="ot">&lt;-</span> pbmc_seurat <span class="sc">%&gt;%</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">NormalizeData</span>(<span class="at">normalization.method =</span> <span class="st">"LogNormalize"</span>, <span class="at">scale.factor =</span> <span class="dv">10000</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">FindVariableFeatures</span>(<span class="at">selection.method =</span> <span class="st">"vst"</span>, <span class="at">nfeatures =</span> <span class="dv">2000</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ScaleData</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="inspecting-object" class="level2">
+<h2 class="anchored" data-anchor-id="inspecting-object">2. Inspecting object</h2>
+<p>Once we have the Seurat object, we can quickly inspect its structure. Why should we do it? For education, it is nice to understand what slots will be kept over the conversion process.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>pbmc_seurat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>An object of class Seurat 
+13714 features across 2700 samples within 1 assay 
+Active assay: RNA (13714 features, 2000 variable features)
+ 3 layers present: counts, data, scale.data</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>pbmc_seurat<span class="sc">@</span>assays</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$RNA
+Assay (v5) data with 13714 features for 2700 cells
+Top 10 variable features:
+ ISG15, CPSF3L, MRPL20, ATAD3C, C1orf86, RER1, RP3-395M20.9, LRRC47,
+GPR153, TNFRSF25 
+Layers:
+ counts, data, scale.data </code></pre>
+</div>
+</div>
+</section>
+<section id="converting-to-singlecellexperiment" class="level2">
+<h2 class="anchored" data-anchor-id="converting-to-singlecellexperiment">3. Converting to SingleCellExperiment</h2>
+<p>In our experience, the <code>SingleCellExperiment</code> object works as an intermediate layer between Seurat and AnnData. In short, it will ensure that most of the data is maintained among formats.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>pbmc_sce <span class="ot">&lt;-</span> <span class="fu">as.SingleCellExperiment</span>(</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    pbmc_seurat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="saving-as-anndata" class="level2">
+<h2 class="anchored" data-anchor-id="saving-as-anndata">4. Saving as AnnData</h2>
+<p>Finally, we will use <strong>sceasy</strong> for converting <code>SingleCellExperiment</code> to <code>Anndata</code>. sceasy is a package that helps easily convert different single-cell data formats to each other. Converting to AnnData creates a file that can be directly used in cellxgene which is an interactive explorer for single-cell transcriptomics datasets.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">convertFormat</span>(pbmc_sce, <span class="at">from=</span><span class="st">"sce"</span>, <span class="at">to=</span><span class="st">"anndata"</span>,</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>                       <span class="at">outFile=</span><span class="st">'/Users/affaustino/Projects/UTILS/quarto_blog/data/pbmc.h5ad'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>AnnData object with n_obs × n_vars = 2700 × 13714
+    obs: 'nCount_RNA', 'nFeature_RNA', 'percent_mt'
+    var: 'name'</code></pre>
+</div>
+</div>
+<hr>
+<ul>
+<li>The figures are derived from <a href="https://en.wikipedia.org/wiki/Python_(programming_language)">1</a>, and <a href="https://commons.wikimedia.org/wiki/File:Eo_circle_blue_letter-r.svg">2</a></li>
+</ul>
 
 
+</section>
+</section>
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="debbuging new" data-listing-date-sort="1710374400000" data-listing-file-modified-sort="1710455008132" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="321">
-<div class="thumbnail">
-<p><a href="./posts/2024-03-14/index.html" class="no-external"></a></p><a href="./posts/2024-03-14/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/2024-03-14/post.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/2024-03-14/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2024-03-14/index.html" class="no-external">Data interoperability for single-cell analysis</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2024-03-14/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('debbuging new'); return false;">
-debbuging new
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/2024-03-14/index.html" class="no-external">Seurat is undoubtedly the most used package for single-cell analysis. However, the single-cell field has changed towards new programming languages and packages (e.g.…<strong></strong></a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2024-03-14/index.html" class="no-external">
-<div class="listing-date">
-Mar 14, 2024
-</div>
-<div class="listing-author">
-Lexanomics
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="awesome science" data-listing-date-sort="1710201600000" data-listing-file-modified-sort="1710455008128" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="288">
-<div class="thumbnail">
-<p><a href="./posts/2024-03-12/index.html" class="no-external"></a></p><a href="./posts/2024-03-12/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/2024-03-12/fig1.jpg"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/2024-03-12/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2024-03-12/index.html" class="no-external">Unveiling the Beginning of the Pandemic: The Transformative Role of Meta-Transcriptomics in Pathogen Identification</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2024-03-12/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('awesome science'); return false;">
-awesome science
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/2024-03-12/index.html" class="no-external">The year 2020 will forever be remembered as the starting point of the COVID-19 pandemic, declared by the World Health Organization. A revolution in the speed of information…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2024-03-12/index.html" class="no-external">
-<div class="listing-date">
-Mar 12, 2024
-</div>
-<div class="listing-author">
-Diego Teixeira
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="bioinfo-trends,sequencing-technologies" data-listing-date-sort="1709856000000" data-listing-file-modified-sort="1710455008128" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="275">
-<div class="thumbnail">
-<p><a href="./posts/2024-03-08/index.html" class="no-external"></a></p><a href="./posts/2024-03-08/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/2024-03-08/fig1.jpg"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/2024-03-08/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2024-03-08/index.html" class="no-external">Why to sequence the DNA?</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2024-03-08/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('bioinfo-trends'); return false;">
-bioinfo-trends
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('sequencing-technologies'); return false;">
-sequencing-technologies
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/2024-03-08/index.html" class="no-external">There are many different DNA sequencing technologies, all of them with their potentialities. However, do you know some of the main use cases for DNA sequencing?</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2024-03-08/index.html" class="no-external">
-<div class="listing-date">
-Mar 8, 2024
-</div>
-<div class="listing-author">
-Iara Souza
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="awesome science" data-listing-date-sort="1709424000000" data-listing-file-modified-sort="1710455008128" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="281">
-<div class="thumbnail">
-<p><a href="./posts/2024-03-02/index.html" class="no-external"></a></p><a href="./posts/2024-03-02/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/2024-03-02/fig1.jpeg" alt="Three graphs showing evolutionary relationships of primates regarding the tail gene."  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/2024-03-02/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2024-03-02/index.html" class="no-external">Jumping genetic element getting in the way of primates tail evolution</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2024-03-02/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('awesome science'); return false;">
-awesome science
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/2024-03-02/index.html" class="no-external">It is of common knowledge that humans and monkeys share great similarities regarding their genomes. And, if most monkeys have tails, what happend to ours? This is the…<span class="citation" data-cites="xia2024"></span></a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2024-03-02/index.html" class="no-external">
-<div class="listing-date">
-Mar 3, 2024
-</div>
-<div class="listing-author">
-Iara Souza
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="bioinfo-trends,sequencing-technologies" data-listing-date-sort="1709164800000" data-listing-file-modified-sort="1710455008120" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="308">
-<div class="thumbnail">
-<p><a href="./posts/2024-02-29/index.html" class="no-external"></a></p><a href="./posts/2024-02-29/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/2024-02-29/fig1.jpeg" alt="Single-cell graph with similarities with a map"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/2024-02-29/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2024-02-29/index.html" class="no-external">Analysing the cell transcriptional profile at the single-cell resolution</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2024-02-29/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('bioinfo-trends'); return false;">
-bioinfo-trends
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('sequencing-technologies'); return false;">
-sequencing-technologies
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/2024-02-29/index.html" class="no-external">Single-cell RNA-seq analysis is a powerful technique used in biology and medicine to study the gene expression of individual cells within a population. Single-cell gene…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2024-02-29/index.html" class="no-external">
-<div class="listing-date">
-Feb 29, 2024
-</div>
-<div class="listing-author">
-Iara Souza
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="bioinfo-trends,sequencing-technologies" data-listing-date-sort="1709078400000" data-listing-file-modified-sort="1710455008120" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="292">
-<div class="thumbnail">
-<p><a href="./posts/2024-02-28/index.html" class="no-external"></a></p><a href="./posts/2024-02-28/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/2024-02-28/fig1.jpg"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/2024-02-28/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2024-02-28/index.html" class="no-external">A new look into microorganisms by the lens of metagenomics</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2024-02-28/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('bioinfo-trends'); return false;">
-bioinfo-trends
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('sequencing-technologies'); return false;">
-sequencing-technologies
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/2024-02-28/index.html" class="no-external">Have you ever heard that a great percentage of our body composition comes from the microorganisms living with us? Recent research suggests a 1:1 ratio for the number of…<span class="citation" data-cites="SENDER2016337"></span></a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2024-02-28/index.html" class="no-external">
-<div class="listing-date">
-Feb 28, 2024
-</div>
-<div class="listing-author">
-Iara Souza
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="6" data-categories="bioinfo-trends,sequencing-technologies" data-listing-date-sort="1708992000000" data-listing-file-modified-sort="1710455008120" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="191">
-<div class="thumbnail">
-<p><a href="./posts/2024-02-27/index.html" class="no-external"></a></p><a href="./posts/2024-02-27/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/2024-02-27/fig1.jpg"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/2024-02-27/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2024-02-27/index.html" class="no-external">Are you aware about RNA sequencing analysis?</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2024-02-27/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('bioinfo-trends'); return false;">
-bioinfo-trends
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('sequencing-technologies'); return false;">
-sequencing-technologies
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/2024-02-27/index.html" class="no-external">Sequencing technologies have revolutionized our understanding of human and other organisms’ biology. By having access to the transcriptome, one can have insights about the…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2024-02-27/index.html" class="no-external">
-<div class="listing-date">
-Feb 27, 2024
-</div>
-<div class="listing-author">
-Iara Souza
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
