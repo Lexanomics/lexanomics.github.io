@@ -6,10 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Diego Coelho">
-<meta name="dcterms.date" content="2024-05-07">
+<meta name="dcterms.date" content="2024-05-09">
 
-<title>Lexanomics Blog - scGPT: A foundation model for single-cell genomics that got it! (The Right Stuff).</title>
+<title>Lexanomics Blog - Improving single-cell projects: Generative models for data imputation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -138,7 +137,7 @@ div.csl-indent {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">scGPT: A foundation model for single-cell genomics that got it! (The Right Stuff).</h1>
+      <h1 class="title">Improving single-cell projects: Generative models for data imputation</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">awesome science</div>
               </div>
@@ -148,17 +147,11 @@ div.csl-indent {
   
   <div class="quarto-title-meta">
 
-      <div>
-      <div class="quarto-title-meta-heading">Author</div>
-      <div class="quarto-title-meta-contents">
-               <p>Diego Coelho </p>
-            </div>
-    </div>
       
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">May 7, 2024</p>
+        <p class="date">May 9, 2024</p>
       </div>
     </div>
     
@@ -179,27 +172,27 @@ div.csl-indent {
 
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="abstract.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1" title="From [@Cui2024]"><img src="abstract.png" class="img-fluid figure-img" alt="From (Cui et al. 2024)"></a></p>
-<figcaption>From <span class="citation" data-cites="Cui2024">(<a href="#ref-Cui2024" role="doc-biblioref">Cui et al. 2024</a>)</span></figcaption>
+<p><a href="MIDAS.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1" title="From [@He2024]"><img src="MIDAS.png" class="img-fluid figure-img" alt="From (He et al. 2024)"></a></p>
+<figcaption>From <span class="citation" data-cites="He2024">(<a href="#ref-He2024" role="doc-biblioref">He et al. 2024</a>)</span></figcaption>
 </figure>
 </div>
-<p>Generative pre-trained models are the new cool kid on the block <a href="https://www.youtube.com/watch?v=tbIEwIwYz-c">😎</a> that no one can ignore anymore. Usage of this new approach have tremendous impact in a broad amount of areas. Biology is no exception, with complex molecular signatures, different cell types, states, and all kinds of different experiments to induce alteration in specific mechanisms make this a perfect storm to get more meaningful information from this source.</p>
-<p>In a single approach, scGPT has managed to get 6 different important aspects from scRNAseq: 1) Clustering; 2) Batch Correction; 3) Cell type annotation; 4) Gene network inference; 5) Multiomic integration; and 6) Perturbation prediction;</p>
-<p>For this first version of scGPT, it was used 33 million cells from <a href="https://cellxgene.cziscience.com/">CELLxGENE collection</a> with 51 organs / tissues and 441 different studies, which represented a most of cellular differences across human body.</p>
-<p>Authors have reported that their model without any fine-tuning can achieve impressive &gt;80% precision while annotating non-rare cell types, and with some fine-tuning this precision can reach ~85%. Looking at perturbation, removal of 1 or 2 genes, in a cell model, fine-tuned scGPT was able to reach 60% of Pearson correlation, outcoming previous models by 5-20%. Integration of datasets also outperformed known techniques from scVI, Seurat and Harmony by 5-10%. GRN-inference was also tested finding not just known networks in curated datasets but also being able to predict interference in those networks.</p>
-<p>Although too good to be true, we definitely can´t take our eyes out from start using more and more this type of approach as Satija (Seurat main coordinator) have highlighted in his last <a href="https://www.youtube.com/watch?v=eQ7wzmzWaEk&amp;t=406s">Single Cell Genomics Day</a>.</p>
-<p>Conclusion is that we are reaching a point that most of manual / semi-automated work running pipelines to describe cell types + extracting meaningful information scRNAseq would be mostly done by one of those generative models. In a near future, we might ask an LLM (as GPT4) with our fastqs which cell types and meaningful biological information can be found in our scRNAseq experiments.</p>
-<p>Authors were also very generous to provide lots of examples in jupyter notebooks in their github repo <a href="https://github.com/bowang-lab/scGPT">scGPT</a>. What you think about we explore this here in our blog for a next post? - Provide us some feedback in our <a href="https://www.linkedin.com/company/96435480/admin/feed/posts/">Linkedin</a> post!</p>
+<p>In the previous <a href="https://www.lexanomics.com/blog/posts/2024-05-07/">post</a>, we mentioned how deep-learning and generative approaches are revolutionizing genomics and single-cell studies.</p>
+<p>Today, we talk about another model that has a distinct purpose called MIDAS (mosaic integration and knowledge transfer). MIDAS is designed to handle and improve data integration across different single-cell modalities, e.g., RNA-Seq, ATAC-Seq, and CITE-seq or ADT (antibody-derived tags).</p>
+<p>That sounds fancy. But what is the purpose of this approach?</p>
+<p>Well, single-cell studies are often limited by data sparsity, i.e., zeros in the count matrices. These so-called “gaps” in the data can dramatically reduce the biological insights related to a specific disease or condition. In this context, MIDAS shines as a way to effectively integrate multimodal data or even generate data modality layers for improving downstream analysis. Yes, I said generate.</p>
+<p>In this study, the authors demonstrate how the method performs to fulfill this data mosaic. Not surprisingly, the generated layers seem to improve cell clustering and highlight cellular heterogeneity at a fine-grained level in a PBMC dataset. Further, the authors pushed the boundaries and mentioned that MIDAS can even help detect rare proteins in B cells (e.g., CD20). Other cell markers were also brought to attention such as CD3 and CD4 (T-cell markers) observed in two B subclusters. Intriguing.</p>
+<p>Anyhow, if you are a researcher and you facing issues analyzing your single-cell project - cough, cough low cell counts - I would suggest adding MIDAS-like methods to your workflow.</p>
+<p>Yet, remember generative models are still biased and sometimes can lead to misinterpretations. Maybe a before-and-after imputation approach could be a nice way to go… I leave it to you, dear bioinformatician.</p>
 
 
 <div class="hidden" aria-hidden="true">
-<span class="glightbox-desc lightbox-desc-1">From <span class="citation" data-cites="Cui2024">(<a href="#ref-Cui2024" role="doc-biblioref">Cui et al. 2024</a>)</span></span>
+<span class="glightbox-desc lightbox-desc-1">From <span class="citation" data-cites="He2024">(<a href="#ref-He2024" role="doc-biblioref">He et al. 2024</a>)</span></span>
 </div>
 
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-Cui2024" class="csl-entry" role="listitem">
-Cui, Haotian, Chloe Wang, Hassaan Maan, Kuan Pang, Fengning Luo, Nan Duan, and Bo Wang. 2024. <span>“scGPT: Toward Building a Foundation Model for Single-Cell Multi-Omics Using Generative AI.”</span> <em>Nature Methods 2024</em>, February, 1–11. <a href="https://doi.org/10.1038/s41592-024-02201-0">https://doi.org/10.1038/s41592-024-02201-0</a>.
+<div id="ref-He2024" class="csl-entry" role="listitem">
+He, Zhen, Shuofeng Hu, Yaowen Chen, Sijing An, Jiahao Zhou, Runyan Liu, Junfeng Shi, et al. 2024. <span>“Mosaic Integration and Knowledge Transfer of Single-Cell Multimodal Data with MIDAS.”</span> <em>Nature Biotechnology</em>, January. <a href="https://doi.org/10.1038/s41587-023-02040-y">https://doi.org/10.1038/s41587-023-02040-y</a>.
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -590,7 +583,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","loop":true,"selector":".lightbox","descPosition":"bottom"});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","openEffect":"zoom","descPosition":"bottom","loop":true});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
