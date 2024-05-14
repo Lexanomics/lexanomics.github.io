@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Diego Teixeira">
-<meta name="dcterms.date" content="2024-05-02">
+<meta name="dcterms.date" content="2024-05-14">
 
-<title>Lexanomics Blog - Gut microbiome composition: link between sports performance and protein absorption?</title>
+<title>Lexanomics Blog - Comparison of Metagenomics and Metatranscriptomics Tools: A Guide to Making the Right Choice</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -138,7 +138,7 @@ div.csl-indent {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Gut microbiome composition: link between sports performance and protein absorption?</h1>
+      <h1 class="title">Comparison of Metagenomics and Metatranscriptomics Tools: A Guide to Making the Right Choice</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">awesome science</div>
               </div>
@@ -158,7 +158,7 @@ div.csl-indent {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">May 2, 2024</p>
+        <p class="date">May 14, 2024</p>
       </div>
     </div>
     
@@ -177,27 +177,25 @@ div.csl-indent {
 
 
 
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="abstract.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1" title="From [@fritz_gut_2024]"><img src="abstract.png" class="img-fluid figure-img" alt="From (Fritz et al. 2024)"></a></p>
-<figcaption>From <span class="citation" data-cites="fritz_gut_2024">(<a href="#ref-fritz_gut_2024" role="doc-biblioref">Fritz et al. 2024</a>)</span></figcaption>
-</figure>
-</div>
-<p>Proteins are the building blocks of nutrition, indispensable for bone and muscle metabolism. Adequate intake not only maintains health but also bolsters sports performance. However, recent studies have shed light on the intricate relationship between high-dose protein intake and potential intestinal inflammation, such as inflammatory bowel disease. While most proteins are digested in the small intestine, about 10% remain undigested, undergoing further breakdown by gut bacteria in the large intestine. This process, known as proteolysis, produces byproducts like ammonia and biogenic amines, which may exacerbate intestinal irritations.</p>
-<p>Athletes, with their heightened physical demands, often require double the daily protein intake. Yet, crafting precise nutritional strategies becomes paramount, especially for those in endurance or strength training programs. Balancing protein consumption with other macronutrients becomes a nuanced dance, complicating the formulation of universal recommendations. Seeking to optimize protein intake quality among athletes, a recent study set out to evaluate the impact of protein supplementation with and without prebiotics and fermented herbal probiotics on the gut microbiome.</p>
-<p>Twenty elite male water polo players participated, divided into Control and Intervention groups. Both groups received a daily 250 ml dose of vegan protein shake over a 31-day period. However, the Intervention group received an additional supplement comprising prebiotics and a fermented probiotic herbal product for 30 days alongside the vegan protein. Stool samples were collected before and after the intervention, and the genetic material was sequenced using a NextSeq2000 platform to analyze the gut microbiome composition.</p>
-<p>Throughout the study, no significant differences in macronutrient intake were observed between the groups or over time. However, the Intervention group exhibited notable improvements in various metrics related to body composition, including fat-free mass, skeletal muscle mass, and arm circumference, alongside reductions in body fat metrics. These changes correlated with alterations in the gut microbiota, particularly an increase in Bacteroidetes and a decrease in Firmicutes. Notably, bacteria producing short-chain fatty acids (SCFAs) like butyrate underwent significant changes, potentially influencing muscle mass positively. SCFAs have been linked to improved metabolism and reduced inflammation, both crucial for sustaining muscle health during rigorous training.</p>
-<p>In conclusion, vegan protein supplementation, coupled with prebiotics and probiotics, proved beneficial for enhancing body composition among elite water polo players. The observed increase in skeletal muscle mass in the Intervention group suggests a synergistic relationship between protein supplementation and gut microbiota modulation. This is supported by the rise in SCFA-producing bacteria, hinting at improved muscle metabolism. Furthermore, elevated levels of mean corpuscular hemoglobin in the blood indicate enhanced metabolic activity within muscle cells, further bolstering the link between gut health and athletic performance.</p>
+<p><a href="abs.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="abs.png" class="img-fluid"></a></p>
+<p>Bioinformatics is an area where new analytical methods, tools, and pipelines are constantly emerging. Therefore, knowing which tools are most appropriate for your data is essential to ensure the high quality of analyses and reproducibility.</p>
+<p>With the aim of providing an overview of the techniques and tools available for Metagenomics and Metatranscriptomics, both from a methodological and bioinformatics perspective, Terrón-Camero and collaborators <span class="citation" data-cites="terron-camero_comparison_2022">(<a href="#ref-terron-camero_comparison_2022" role="doc-biblioref">Terrón-Camero et al. 2022</a>)</span> conducted a series of comparisons between read classification tools such as QIIME2, MEGAN, mOTU, MetaPhAn, Kranken2, and others; and also provides pipelines to execute all of them in an automated manner, using Nextflow.</p>
+<p>The authors provide some tips on how to proceed with read classification, and here is a short answer:</p>
+<ul>
+<li>For shotgun metagenomics: Kraken2;</li>
+<li>For 16S analysis: we recommend using the QIIME 2 tool when a low number of reads exists;</li>
+<li>Also for 16S analysis: Kraken2 is efficient when the library was deeply sequenced.</li>
+<li>For metatranscriptomics data: Kraken2 and Bracken.</li>
+</ul>
+<p><em>The work also makes it very clear the need to perform filtering by applying a threshold to eliminate organisms with low abundance, thus reducing false positives.</em></p>
+<p>In addition to the technical characteristics of the tools, the article also provides a comprehensive review of the influence of gut microbiota on various conditions that can affect humans, which further enhances the value of reading the paper.</p>
 
 
-<div class="hidden" aria-hidden="true">
-<span class="glightbox-desc lightbox-desc-1">From <span class="citation" data-cites="fritz_gut_2024">(<a href="#ref-fritz_gut_2024" role="doc-biblioref">Fritz et al. 2024</a>)</span></span>
-</div>
 
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-fritz_gut_2024" class="csl-entry" role="listitem">
-Fritz, Péter, Réka Fritz, Pál Bóday, Ádám Bóday, Emese Bató, Péter Kesserű, and Csilla Oláh. 2024. <span>“Gut Microbiome Composition: Link Between Sports Performance and Protein Absorption?”</span> <em>Journal of the International Society of Sports Nutrition</em> 21 (1): 2297992. <a href="https://doi.org/10.1080/15502783.2023.2297992">https://doi.org/10.1080/15502783.2023.2297992</a>.
+<div id="ref-terron-camero_comparison_2022" class="csl-entry" role="listitem">
+Terrón-Camero, Laura C., Fernando Gordillo-González, Eduardo Salas-Espejo, and Eduardo Andrés-León. 2022. <span>“Comparison of <span>Metagenomics</span> and <span>Metatranscriptomics</span> <span>Tools</span>: <span>A</span> <span>Guide</span> to <span>Making</span> the <span>Right</span> <span>Choice</span>.”</span> <em>Genes</em> 13 (12): 2280. <a href="https://doi.org/10.3390/genes13122280">https://doi.org/10.3390/genes13122280</a>.
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -588,7 +586,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":true,"openEffect":"zoom","closeEffect":"zoom","descPosition":"bottom"});
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","selector":".lightbox","loop":true,"descPosition":"bottom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
