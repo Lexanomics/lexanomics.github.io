@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Lexanomics">
-<meta name="dcterms.date" content="2024-05-28">
+<meta name="dcterms.date" content="2024-06-13">
 
-<title>Lexanomics Blog - Are a good or a bad guy? Identifying malignant cells using Numbat</title>
+<title>Lexanomics Blog - Convert database identifiers with biomaRt R package</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,27 +22,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
 }
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -61,9 +75,6 @@ div.csl-indent {
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -138,7 +149,7 @@ div.csl-indent {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Are a good or a bad guy? Identifying malignant cells using Numbat</h1>
+      <h1 class="title">Convert database identifiers with <code>biomaRt</code> R package</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">debbuging new</div>
               </div>
@@ -158,7 +169,7 @@ div.csl-indent {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">May 28, 2024</p>
+        <p class="date">June 13, 2024</p>
       </div>
     </div>
     
@@ -177,39 +188,76 @@ div.csl-indent {
 
 
 
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="numbat.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1" title="@Gao2024"><img src="numbat.png" class="img-fluid figure-img" alt="Teng Gao et al. (2022)"></a></p>
-<figcaption><span class="citation" data-cites="Gao2024">Teng Gao et al. (<a href="#ref-Gao2024" role="doc-biblioref">2022</a>)</span></figcaption>
-</figure>
+<p>BioMart is an integral part of the Ensembl project, and it was designed to facilitate the access and retrieval of biological data. With BioMart, users can easily extract information about genes, proteins, and other genomic features, linking this data across various biological datasets. Its flexibility and ease of use make it an invaluable tool for bioinformaticians and biologists aiming to integrate and analyze large-scale biological data efficiently. BioMart is available through its <a href="http://www.ensembl.org/info/data/biomart/index.html">web page</a>, however, there’s the <a href="https://bioconductor.org/packages/release/bioc/html/biomaRt.html"><code>biomaRt</code></a> R/Bioconductor package that can be used to access data programatically.</p>
+<p>In this tutorial, we show how to make a simple query using the <code>biomaRt</code> R package.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>gene_list <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"~/genes.txt"</span>, <span class="at">header =</span> T, <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Distinguishing malignant cells in a single-cell project can be a very time-consuming task. Particularly, malignant cells are heterogeneous and often display misleading expression signatures, which can be further obscure by tumor microenvironment or treatment features. In addition, some malignant cells are closely related to their normal counterparts (e.g., lymphoma).</p>
-<p>How can we define malignant then? For this purpose, researchers have leveraged copy number variation (CNV) analysis, i.e., considering that only malignant cells should display these somatic events. A fair assumption.</p>
-<p>Nowadays, many software statistically infers CNV load using single-cell transcriptomics data, such as InferCNV or CopyKAT. However, while these methods are useful, we can point out a few bottlenecks in their assumptions. Essentially, these methods assume that gene expression changes can be indicative of underlying CNVs. Further, InferCNV relies heavily on the accurate identification of reference (normal) cells. If the reference cells are not correctly annotated, this can lead to incorrect CNV inferences. CopyKAT detection is limited to CNV events based on changes in read depth across the genome. Finally, both methods are not suitable for analyzing rare subclone structures, i.e., they expected expanded subclones that share similar genotypes.</p>
-<p>Fortunately, new methods can leverage supplementary data or distinct statistical assumptions. On this note, we would like to introduce, <strong>Numbat</strong>. Numbat can be used to:</p>
-<ul>
-<li>Detect allele-specific copy number variations from scRNA-seq and spatial transcriptomics;</li>
-<li>Differentiate tumor versus normal cells in the tumor microenvironment;</li>
-<li>Infer the clonal architecture and evolutionary history of profiled tumors.</li>
-</ul>
-<p>Numbat integrates haplotype information obtained from <strong>population-based</strong> phasing with allele and expression signals to enhance the detection of copy number variations from scRNA-seq. <strong>Cool, but what that means?!</strong></p>
-<p>In short, Numbat capitalizes on the allele imbalance approach to determine expected deviations caused by CNV events, i.e., an allele that deviates from normal proportion (1:1 ratio of paternal and maternal copies). This is done by phasing the single-cell reads using reference panels, such as 1000G and TOPMed. We could think about it as a “fine-mapping” step that shows single-nucleotide polymorphisms proportion across the single-cell reads. Therefore, alleles displaying imbalance proportions should be derived from CNV events. Did you gotcha it?</p>
-<p>Now you have the principle, we can think this model is expanded into the haplotype level (multiple SNPs inherited together), and it incorporates expression changes related to genes across distinct cell populations. The distinct cell populations are essentially pseudobulk matrices- the authors mentioned that it was a way to overcome sparse coverage in scRNA-seq data. To note, it is a fairly common strategy for enhanced signal detection in single-cell studies.</p>
-<p>Thus, Numbat’s model can jointly understand changes in the expression level considering how likely these changes are associated with CNV-related events. It is not only about expression fold-change deviations across probabilistic states but also about whether these deviations are supported by phased data on the pseudobulk level. <strong>What does that bring to the table?</strong></p>
-<p>The authors provide a few examples and validations displaying the value of their model <span class="citation" data-cites="Gao2024">(<a href="#ref-Gao2024" role="doc-biblioref">Teng Gao et al. 2022</a>)</span>. But, for me, it considerably decreases subjectivity in selecting malignant cells (or even subclone structures) in my data. For instance, we are not using a reference based on annotated cells, which are very prone to human error, but a population-wise reference. Also, it potentially elucidates rare subclone structures by incorporating a maximum-likelihood step to capture evolutionary relationships between single cells.</p>
-<p><strong>But, what do you think bioinformaticians? Read the paper and, please feel free to reach out!</strong></p>
-
-
-<div class="hidden" aria-hidden="true">
-<span class="glightbox-desc lightbox-desc-1"><span class="citation" data-cites="Gao2024">Teng Gao et al. (<a href="#ref-Gao2024" role="doc-biblioref">2022</a>)</span></span>
+<p>Suppose that we have a list of human peptides (Ensembl peptide IDs) and we want to retrieve their corresponding gene symbols.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gene_list)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  ensembl_peptide_id
+1    ENSP00000330918
+2    ENSP00000364486
+3    ENSP00000436217
+4    ENSP00000364699
+5    ENSP00000432005
+6    ENSP00000436669</code></pre>
 </div>
-
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-Gao2024" class="csl-entry" role="listitem">
-Teng Gao, Ruslan Soldatov, Hirak Sarkar, Adam Kurkiewicz, Evan Biederstedt, Po-Ru Loh, and Peter Kharchenko. 2022. <span>“Haplotype-Aware Analysis of Somatic Copy Number Variations from Single-Cell Transcriptomes.”</span> <em>Nature Biotechnology</em>. <a href="https://www.nature.com/articles/s41587-022-01468-y">https://www.nature.com/articles/s41587-022-01468-y</a>.
 </div>
-</div></section></div></main> <!-- /main -->
+<p>With biomaRt package, we can do that in 3 simple steps:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(biomaRt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol type="1">
+<li>Set the ensembl channel:</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>ensembl <span class="ot">&lt;-</span> <span class="fu">useMart</span>(<span class="st">"ENSEMBL_MART_ENSEMBL"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Depending on the type of data you want to collect (e.g., variants), there are other channels available. To list all channels available, use the <code>listMarts()</code> function.</p>
+<ol start="2" type="1">
+<li>Choose a dataset (organism):</li>
+</ol>
+<p>For human data, the dataset keyword is <code>hsapiens_gene_ensembl</code>. To access the keywords for other organisms, run the <code>listDatasets()</code> function.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>ensembl <span class="ot">&lt;-</span> <span class="fu">useDataset</span>(<span class="at">dataset =</span> <span class="st">"hsapiens_gene_ensembl"</span>, <span class="at">mart =</span> ensembl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="3" type="1">
+<li>Make the query:</li>
+</ol>
+<p>Before making the query, we need to know which attribute keywords are available at BioMart database. We can list the attributes available with the <code>listAttributes()</code> function. We also need to obtain the filter keywords by using the <code>listFilters()</code> function. In summary, the attributes are the ID keywords you want to retrieve and the filters are the ID keywords you’ll use to make the query.</p>
+<p>With proper attributes and filters selected, you can pass them to the <code>attributes</code> and <code>filters</code> arguments from the <code>getBM()</code> function. If you have a specific list of identifiers to convert, like we do have from the <code>gene_list</code> dataframe, pass it to the <code>values</code> argument. If you do not provide anything to the <code>values</code> argument, the <code>getBM()</code> function will return all identifiers requested for the attributes provided on the chosen organism.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Dataframe with attributes</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>att <span class="ot">&lt;-</span> <span class="fu">listAttributes</span>(ensembl)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Dataframe with filters</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>filters <span class="ot">&lt;-</span> <span class="fu">listFilters</span>(ensembl)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Make the query with getBM function</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>ids <span class="ot">&lt;-</span> <span class="fu">getBM</span>(<span class="at">attributes =</span> <span class="fu">c</span>(<span class="st">"hgnc_symbol"</span>, <span class="st">"ensembl_peptide_id"</span>),</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>             <span class="at">filters =</span> <span class="st">"ensembl_peptide_id"</span>,</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>             <span class="at">values =</span> gene_list<span class="sc">$</span>ensembl_peptide_id,</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>             <span class="at">mart =</span> ensembl)</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ids)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  hgnc_symbol ensembl_peptide_id
+1        PCK2    ENSP00000494029
+2        PCK2    ENSP00000496343
+3        PCK2    ENSP00000496102
+4        PCK2    ENSP00000494919
+5       FOXO1    ENSP00000368880
+6       PTPN2    ENSP00000320298</code></pre>
+</div>
+</div>
+<p>And that’s it! You can make many different queries on the database identifiers provided by BioMart.</p>
+
+
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -598,31 +646,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","descPosition":"bottom","closeEffect":"zoom","loop":true});
-window.onload = () => {
-  lightboxQuarto.on('slide_before_load', (data) => {
-    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-    const href = trigger.getAttribute('href');
-    if (href !== null) {
-      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-      if (imgEl !== null) {
-        const srcAttr = imgEl.getAttribute("src");
-        if (srcAttr && srcAttr.startsWith("data:")) {
-          slideConfig.href = srcAttr;
-        }
-      }
-    } 
-  });
-
-  lightboxQuarto.on('slide_after_load', (data) => {
-    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-    if (window.Quarto?.typesetMath) {
-      window.Quarto.typesetMath(slideNode);
-    }
-  });
-
-};
-          </script>
 
 
 
