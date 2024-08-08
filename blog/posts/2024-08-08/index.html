@@ -6,9 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-05-09">
+<meta name="author" content="Lexanomics">
+<meta name="dcterms.date" content="2024-08-08">
 
-<title>Lexanomics Blog - Improving single-cell projects: Generative models for data imputation</title>
+<title>Lexanomics Blog - The gut microbiome influences microglial populations</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -137,7 +138,7 @@ div.csl-indent {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Improving single-cell projects: Generative models for data imputation</h1>
+      <h1 class="title">The gut microbiome influences microglial populations</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">awesome science</div>
               </div>
@@ -147,11 +148,17 @@ div.csl-indent {
   
   <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Lexanomics </p>
+            </div>
+    </div>
       
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">May 9, 2024</p>
+        <p class="date">August 8, 2024</p>
       </div>
     </div>
     
@@ -170,29 +177,27 @@ div.csl-indent {
 
 
 
+<p>The relationship between the gut microbiome and the neural function and behavior has been widely explored in the past years, specially after the development of metagenomics techniques. Here, we highlight the <span class="citation" data-cites="huang2023gut">Huang et al. (<a href="#ref-huang2023gut" role="doc-biblioref">2023</a>)</span> et al.&nbsp;study, which explored the transcriptomic changes in microglia resulting from the absence of gut microbiota and the potential reversibility of these changes through microbial colonization.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="MIDAS.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1" title="From [@He2024]"><img src="MIDAS.png" class="img-fluid figure-img" alt="From (He et al. 2024)"></a></p>
-<figcaption>From <span class="citation" data-cites="He2024">(<a href="#ref-He2024" role="doc-biblioref">He et al. 2024</a>)</span></figcaption>
+<p><a href="fig1.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1" title="Differences in distribution of microglial subpopulations in the prefrontal cortex (PFC) across different groups of mice: germ-free (GF), specific pathogen-free (SPF), and colonized-GF (CGF). From @huang2023gut"><img src="fig1.png" class="img-fluid figure-img" alt="Differences in distribution of microglial subpopulations in the prefrontal cortex (PFC) across different groups of mice: germ-free (GF), specific pathogen-free (SPF), and colonized-GF (CGF). From Huang et al. (2023)"></a></p>
+<figcaption>Differences in distribution of microglial subpopulations in the prefrontal cortex (PFC) across different groups of mice: germ-free (GF), specific pathogen-free (SPF), and colonized-GF (CGF). From <span class="citation" data-cites="huang2023gut">Huang et al. (<a href="#ref-huang2023gut" role="doc-biblioref">2023</a>)</span></figcaption>
 </figure>
 </div>
-<p>In the previous <a href="https://www.lexanomics.com/blog/posts/2024-05-07/">post</a>, we mentioned how deep-learning and generative approaches are revolutionizing genomics and single-cell studies.</p>
-<p>Today, we talk about another model that has a distinct purpose called MIDAS (mosaic integration and knowledge transfer). MIDAS is designed to handle and improve data integration across different single-cell modalities, e.g., RNA-Seq, ATAC-Seq, and CITE-seq or ADT (antibody-derived tags).</p>
-<p>That sounds fancy. But what is the purpose of this approach?</p>
-<p>Well, single-cell studies are often limited by data sparsity, i.e., zeros in the count matrices. These so-called “gaps” in the data can dramatically reduce the biological insights related to a specific disease or condition. In this context, MIDAS shines as a way to effectively integrate multimodal data or even generate data modality layers for improving downstream analysis. Yes, I said generate.</p>
-<p>In this study, the authors demonstrate how the method performs to fulfill this data mosaic. Not surprisingly, the generated layers seem to improve cell clustering and highlight cellular heterogeneity at a fine-grained level in a PBMC dataset. Further, the authors pushed the boundaries and mentioned that MIDAS can even help detect rare proteins in B cells (e.g., CD20). Other cell markers were also brought to attention such as CD3 and CD4 (T-cell markers) observed in two B subclusters. Intriguing.</p>
-<p>Anyhow, if you are a researcher and you facing issues analyzing your single-cell project - cough, cough low cell counts - I would suggest adding MIDAS-like methods to your workflow.</p>
-<p>Yet, remember generative models are still biased and sometimes can lead to misinterpretations. Maybe a before-and-after imputation approach could be a nice way to go… I leave it to you, dear bioinformatician.</p>
+<p>Microglia are immune cells in the central nervous system that maintain homeostasis, respond to injury, and modulate neuroinflammation. They are key in synaptic pruning, neuroprotection, and pathogen response. Recent studies show that the gut microbiome significantly impacts brain function, affecting microglial activity via the microbiota-gut-brain axis. Disruptions in gut microbiota are linked to neuropsychiatric disorders like Alzheimer’s and major depressive disorder, characterized by altered microglial function and neuroinflammation.</p>
+<p>To explore how microglia can be affected by the microbiome, researchers used germ-free (GF), specific pathogen-free, and colonized-GF mice. They employed single nucleus sequencing to analyze cell type-specific transcriptomic changes in the prefrontal cortex and hippocampus of the animals.</p>
+<p>In germ-free mice, the absence of gut microbiota caused significant transcriptomic changes in the prefrontal cortex and hippocampus, especially affecting microglia. The gut microbiome influenced the transformation of microglial subpopulations, linked to changes in inflammation-related signals. Microbial colonization reversed these transcriptional changes, highlighting the dynamic relationship between gut microbiota and microglial function. Cross-species analysis associated these transcriptomic changes with Alzheimer’s and major depressive disorder, supported by behavioral tests in mice. Additionally, the absence of gut microbiota increased microglia-astrocyte communication, warranting further exploration in microbiota-gut-brain axis-related diseases.</p>
+<p>Overall, the findings provide new insights into how gut microbiota influence microglial biology and their potential implications for understanding the pathogenesis of neurodegenerative diseases.</p>
 
 
 <div class="hidden" aria-hidden="true">
-<span class="glightbox-desc lightbox-desc-1">From <span class="citation" data-cites="He2024">(<a href="#ref-He2024" role="doc-biblioref">He et al. 2024</a>)</span></span>
+<span class="glightbox-desc lightbox-desc-1">Differences in distribution of microglial subpopulations in the prefrontal cortex (PFC) across different groups of mice: germ-free (GF), specific pathogen-free (SPF), and colonized-GF (CGF). From <span class="citation" data-cites="huang2023gut">Huang et al. (<a href="#ref-huang2023gut" role="doc-biblioref">2023</a>)</span></span>
 </div>
 
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-He2024" class="csl-entry" role="listitem">
-He, Zhen, Shuofeng Hu, Yaowen Chen, Sijing An, Jiahao Zhou, Runyan Liu, Junfeng Shi, et al. 2024. <span>“Mosaic Integration and Knowledge Transfer of Single-Cell Multimodal Data with MIDAS.”</span> <em>Nature Biotechnology</em>, January. <a href="https://doi.org/10.1038/s41587-023-02040-y">https://doi.org/10.1038/s41587-023-02040-y</a>.
+<div id="ref-huang2023gut" class="csl-entry" role="listitem">
+Huang, Y., J. Wu, H. Zhang, et al. 2023. <span>“The Gut Microbiome Modulates the Transformation of Microglial Subtypes.”</span> <em>Molecular Psychiatry</em> 28: 1611–21. <a href="https://doi.org/10.1038/s41380-023-02017-y">https://doi.org/10.1038/s41380-023-02017-y</a>.
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -583,7 +588,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","loop":true,"openEffect":"zoom","descPosition":"bottom"});
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","loop":true,"descPosition":"bottom","openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
