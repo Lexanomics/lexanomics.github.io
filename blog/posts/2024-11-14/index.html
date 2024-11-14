@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Diego Coelho">
-<meta name="dcterms.date" content="2024-05-07">
+<meta name="author" content="Lexanomics">
+<meta name="dcterms.date" content="2024-11-14">
 
-<title>Lexanomics Blog - scGPT: A foundation model for single-cell genomics that got it! (The Right Stuff).</title>
+<title>Lexanomics Blog - Insulin molecule with an on and off button</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -138,7 +138,7 @@ div.csl-indent {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">scGPT: A foundation model for single-cell genomics that got it! (The Right Stuff).</h1>
+      <h1 class="title">Insulin molecule with an on and off button</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">awesome science</div>
               </div>
@@ -151,14 +151,14 @@ div.csl-indent {
       <div>
       <div class="quarto-title-meta-heading">Author</div>
       <div class="quarto-title-meta-contents">
-               <p>Diego Coelho </p>
+               <p>Lexanomics </p>
             </div>
     </div>
       
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">May 7, 2024</p>
+        <p class="date">November 14, 2024</p>
       </div>
     </div>
     
@@ -177,29 +177,29 @@ div.csl-indent {
 
 
 
+<p>Managing diabetes effectively requires precise control of blood glucose levels, typically achieved through insulin therapy. However, conventional insulin treatments can lead to hypoglycemia—a dangerous drop in blood sugar—if not carefully monitored. To address this challenge, researchers at Novo Nordisk have developed a glucose-sensitive insulin analogue named NNC2215, which modulates its activity in response to varying glucose concentrations, thereby reducing the risk of hypoglycemia <span class="citation" data-cites="Hoeg-Jensen2024">(<a href="#ref-Hoeg-Jensen2024" role="doc-biblioref">Hoeg-Jensen et al. 2024</a>)</span>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="abstract.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1" title="From [@Cui2024]"><img src="abstract.png" class="img-fluid figure-img" alt="From (Cui et al. 2024)"></a></p>
-<figcaption>From <span class="citation" data-cites="Cui2024">(<a href="#ref-Cui2024" role="doc-biblioref">Cui et al. 2024</a>)</span></figcaption>
+<p><a href="fig1.webp" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1" title="Mechanism of action for the glucose–sensitive insulin molecule. Illustration from @Sacks2024"><img src="fig1.webp" class="img-fluid figure-img" alt="Mechanism of action for the glucose–sensitive insulin molecule. Illustration from Sacks (2024)"></a></p>
+<figcaption>Mechanism of action for the glucose–sensitive insulin molecule. Illustration from <span class="citation" data-cites="Sacks2024">Sacks (<a href="#ref-Sacks2024" role="doc-biblioref">2024</a>)</span></figcaption>
 </figure>
 </div>
-<p>Generative pre-trained models are the new cool kid on the block <a href="https://www.youtube.com/watch?v=tbIEwIwYz-c">😎</a> that no one can ignore anymore. Usage of this new approach have tremendous impact in a broad amount of areas. Biology is no exception, with complex molecular signatures, different cell types, states, and all kinds of different experiments to induce alteration in specific mechanisms make this a perfect storm to get more meaningful information from this source.</p>
-<p>In a single approach, scGPT has managed to get 6 different important aspects from scRNAseq: 1) Clustering; 2) Batch Correction; 3) Cell type annotation; 4) Gene network inference; 5) Multiomic integration; and 6) Perturbation prediction;</p>
-<p>For this first version of scGPT, it was used 33 million cells from <a href="https://cellxgene.cziscience.com/">CELLxGENE collection</a> with 51 organs / tissues and 441 different studies, which represented a most of cellular differences across human body.</p>
-<p>Authors have reported that their model without any fine-tuning can achieve impressive &gt;80% precision while annotating non-rare cell types, and with some fine-tuning this precision can reach ~85%. Looking at perturbation, removal of 1 or 2 genes, in a cell model, fine-tuned scGPT was able to reach 60% of Pearson correlation, outcoming previous models by 5-20%. Integration of datasets also outperformed known techniques from scVI, Seurat and Harmony by 5-10%. GRN-inference was also tested finding not just known networks in curated datasets but also being able to predict interference in those networks.</p>
-<p>Although too good to be true, we definitely can´t take our eyes out from start using more and more this type of approach as Satija (Seurat main coordinator) have highlighted in his last <a href="https://www.youtube.com/watch?v=eQ7wzmzWaEk&amp;t=406s">Single Cell Genomics Day</a>.</p>
-<p>Conclusion is that we are reaching a point that most of manual / semi-automated work running pipelines to describe cell types + extracting meaningful information scRNAseq would be mostly done by one of those generative models. In a near future, we might ask an LLM (as GPT4) with our fastqs which cell types and meaningful biological information can be found in our scRNAseq experiments.</p>
-<p>Authors were also very generous to provide lots of examples in jupyter notebooks in their github repo <a href="https://github.com/bowang-lab/scGPT">scGPT</a>. What you think about we explore this here in our blog for a next post? - Provide us some feedback in our <a href="https://www.linkedin.com/company/96435480/admin/feed/posts/">Linkedin</a> post!</p>
+<p>NNC2215 is engineered by attaching a glucose-binding macrocycle and a glucoside to specific sites on the insulin molecule. At low glucose levels, the glucoside occupies the macrocycle, keeping NNC2215 in a closed, inactive conformation. When glucose levels rise, glucose binds to the macrocycle, displacing the glucoside and shifting NNC2215 into an open, active form that can effectively bind to insulin receptors.</p>
+<p>In vitro studies demonstrated that NNC2215’s binding affinity to insulin receptors increases significantly with higher glucose concentrations. In animal models, NNC2215 effectively lowered blood glucose levels during hyperglycemia and minimized the risk of hypoglycemia during periods of low blood sugar.</p>
+<p>The development of NNC2215 represents a significant advancement in diabetes management, offering a potential therapy that adjusts its activity based on the body’s glucose levels. This glucose-responsive mechanism could enhance blood sugar control and reduce the incidence of hypoglycemic events, improving the quality of life for individuals with diabetes.</p>
 
 
 <div class="hidden" aria-hidden="true">
-<span class="glightbox-desc lightbox-desc-1">From <span class="citation" data-cites="Cui2024">(<a href="#ref-Cui2024" role="doc-biblioref">Cui et al. 2024</a>)</span></span>
+<span class="glightbox-desc lightbox-desc-1">Mechanism of action for the glucose–sensitive insulin molecule. Illustration from <span class="citation" data-cites="Sacks2024">Sacks (<a href="#ref-Sacks2024" role="doc-biblioref">2024</a>)</span></span>
 </div>
 
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-Cui2024" class="csl-entry" role="listitem">
-Cui, Haotian, Chloe Wang, Hassaan Maan, Kuan Pang, Fengning Luo, Nan Duan, and Bo Wang. 2024. <span>“scGPT: Toward Building a Foundation Model for Single-Cell Multi-Omics Using Generative AI.”</span> <em>Nature Methods 2024</em>, February, 1–11. <a href="https://doi.org/10.1038/s41592-024-02201-0">https://doi.org/10.1038/s41592-024-02201-0</a>.
+<div id="ref-Hoeg-Jensen2024" class="csl-entry" role="listitem">
+Hoeg-Jensen, Thomas, Thomas Kruse, Christian L. Brand, Jeppe Sturis, Christian Fledelius, Peter K. Nielsen, Erica Nishimura, et al. 2024. <span>“Glucose-Sensitive Insulin with Attenuation of Hypoglycaemia.”</span> <em>Nature</em> 634 (8035): 944–51. <a href="https://doi.org/10.1038/s41586-024-08042-3">https://doi.org/10.1038/s41586-024-08042-3</a>.
+</div>
+<div id="ref-Sacks2024" class="csl-entry" role="listitem">
+Sacks, David B. 2024. <span>“Smart Insulin Switches Itself Off in Response to Low Blood Sugar.”</span> <em>Nature</em> 634 (8035): 785–87. <a href="https://doi.org/10.1038/d41586-024-03286-5">https://doi.org/10.1038/d41586-024-03286-5</a>.
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -590,7 +590,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","selector":".lightbox","openEffect":"zoom","loop":true});
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","loop":true,"descPosition":"bottom","openEffect":"zoom","selector":".lightbox"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
