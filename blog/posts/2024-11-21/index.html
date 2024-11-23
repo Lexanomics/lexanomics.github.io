@@ -6,9 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-05-09">
+<meta name="author" content="Diego Teixeira">
+<meta name="dcterms.date" content="2024-11-21">
 
-<title>Lexanomics Blog - Improving single-cell projects: Generative models for data imputation</title>
+<title>Lexanomics Blog - The impact of coffee consumption in the human gut microbiome</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -137,7 +138,7 @@ div.csl-indent {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Improving single-cell projects: Generative models for data imputation</h1>
+      <h1 class="title">The impact of coffee consumption in the human gut microbiome</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">awesome science</div>
               </div>
@@ -147,11 +148,17 @@ div.csl-indent {
   
   <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Diego Teixeira </p>
+            </div>
+    </div>
       
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">May 9, 2024</p>
+        <p class="date">November 21, 2024</p>
       </div>
     </div>
     
@@ -170,29 +177,27 @@ div.csl-indent {
 
 
 
+<p>Coffee, one of the world’s most consumed beverages, is not just a source of caffeine; it’s also linked to a range of health benefits, such as reducing mortality and lowering risks for type 2 diabetes, non-alcoholic fatty liver disease, and certain cancers. Rich in polyphenols like chlorogenic acid and trigonelline, coffee is an excellent model for exploring how diet influences the gut microbiome. Research shows that coffee can alter the diversity of gut bacteria, promoting the growth of genera like <em>Bacteroides</em>, <em>Prevotella</em>, <em>Faecalibacterium</em>, and <em>Alistipes</em>. One initial study even found coffee to have the strongest correlation with microbiome composition, underscoring its important role in shaping microbial communities.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="MIDAS.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1" title="From [@He2024]"><img src="MIDAS.png" class="img-fluid figure-img" alt="From (He et al. 2024)"></a></p>
-<figcaption>From <span class="citation" data-cites="He2024">(<a href="#ref-He2024" role="doc-biblioref">He et al. 2024</a>)</span></figcaption>
+<p><a href="fig.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1" title="Coffee consumption is associated with intestinal Lawsonibacter asaccharolyticus abundance and prevalence across multiple cohorts. Illustration from @manghi_coffee_2024"><img src="fig.png" class="img-fluid figure-img" alt="Coffee consumption is associated with intestinal Lawsonibacter asaccharolyticus abundance and prevalence across multiple cohorts. Illustration from Manghi et al. (2024)"></a></p>
+<figcaption>Coffee consumption is associated with intestinal Lawsonibacter asaccharolyticus abundance and prevalence across multiple cohorts. Illustration from <span class="citation" data-cites="manghi_coffee_2024">Manghi et al. (<a href="#ref-manghi_coffee_2024" role="doc-biblioref">2024</a>)</span></figcaption>
 </figure>
 </div>
-<p>In the previous <a href="https://www.lexanomics.com/blog/posts/2024-05-07/">post</a>, we mentioned how deep-learning and generative approaches are revolutionizing genomics and single-cell studies.</p>
-<p>Today, we talk about another model that has a distinct purpose called MIDAS (mosaic integration and knowledge transfer). MIDAS is designed to handle and improve data integration across different single-cell modalities, e.g., RNA-Seq, ATAC-Seq, and CITE-seq or ADT (antibody-derived tags).</p>
-<p>That sounds fancy. But what is the purpose of this approach?</p>
-<p>Well, single-cell studies are often limited by data sparsity, i.e., zeros in the count matrices. These so-called “gaps” in the data can dramatically reduce the biological insights related to a specific disease or condition. In this context, MIDAS shines as a way to effectively integrate multimodal data or even generate data modality layers for improving downstream analysis. Yes, I said generate.</p>
-<p>In this study, the authors demonstrate how the method performs to fulfill this data mosaic. Not surprisingly, the generated layers seem to improve cell clustering and highlight cellular heterogeneity at a fine-grained level in a PBMC dataset. Further, the authors pushed the boundaries and mentioned that MIDAS can even help detect rare proteins in B cells (e.g., CD20). Other cell markers were also brought to attention such as CD3 and CD4 (T-cell markers) observed in two B subclusters. Intriguing.</p>
-<p>Anyhow, if you are a researcher and you facing issues analyzing your single-cell project - cough, cough low cell counts - I would suggest adding MIDAS-like methods to your workflow.</p>
-<p>Yet, remember generative models are still biased and sometimes can lead to misinterpretations. Maybe a before-and-after imputation approach could be a nice way to go… I leave it to you, dear bioinformatician.</p>
+<p>Here, a total of 54,198 metagenomic samples from multiple sources were evaluated, including 35,214 samples from five ZOE PREDICT cohorts, the MBS, and the MLVS, as well as 18,984 samples from public databases, covering diverse groups such as healthy individuals, non-Westernized populations, newborns, ancient microbiomes, non-human primates, and individuals with various diseases. The samples were profiled using MetaPhlAn 4, with 23,115 of them linked to detailed food frequency questionnaires covering over 150 food items. Additionally, the study included 438 plasma metabolomes and 364 faecal metatranscriptomes from the MBS and MLVS cohorts.</p>
+<p>In addition to microbiome analysis, machine learning models demonstrated that microbiome data could predict coffee intake, with high accuracy in distinguishing coffee drinkers from non-drinkers. Experimental results further confirmed that coffee directly stimulates the growth of <em>L. asaccharolyticus</em>, even in the absence of caffeine.</p>
+<p>Metabolite analysis also provided more evidence, showing that coffee-related compounds like caffeine and quinic acid were linked to the presence of <em>L. asaccharolyticus</em>. This reinforces the idea that coffee consumption can induce specific changes in the microbiome.</p>
+<p>Up to 115 species-level genomes were found to be positively associated with coffee intake, highlighting coffee’s significant impact on the gut microbiome. Future studies should focus on further understanding the mechanisms behind the relationship between coffee and <em>L. asaccharolyticus</em>. As coffee continues to show potential health benefits, it’s crucial to investigate whether this bacterium could mediate some of the positive health effects attributed to coffee. These findings mark a significant step toward understanding how specific foods influence the gut microbiome, opening doors for future research on the microbiome-diet connection.</p>
 
 
 <div class="hidden" aria-hidden="true">
-<span class="glightbox-desc lightbox-desc-1">From <span class="citation" data-cites="He2024">(<a href="#ref-He2024" role="doc-biblioref">He et al. 2024</a>)</span></span>
+<span class="glightbox-desc lightbox-desc-1">Coffee consumption is associated with intestinal Lawsonibacter asaccharolyticus abundance and prevalence across multiple cohorts. Illustration from <span class="citation" data-cites="manghi_coffee_2024">Manghi et al. (<a href="#ref-manghi_coffee_2024" role="doc-biblioref">2024</a>)</span></span>
 </div>
 
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-He2024" class="csl-entry" role="listitem">
-He, Zhen, Shuofeng Hu, Yaowen Chen, Sijing An, Jiahao Zhou, Runyan Liu, Junfeng Shi, et al. 2024. <span>“Mosaic Integration and Knowledge Transfer of Single-Cell Multimodal Data with MIDAS.”</span> <em>Nature Biotechnology</em>, January. <a href="https://doi.org/10.1038/s41587-023-02040-y">https://doi.org/10.1038/s41587-023-02040-y</a>.
+<div id="ref-manghi_coffee_2024" class="csl-entry" role="listitem">
+Manghi, Paolo, Amrisha Bhosle, Kai Wang, Roberta Marconi, Marta Selma-Royo, Liviana Ricci, Francesco Asnicar, et al. 2024. <span>“Coffee Consumption Is Associated with Intestinal Lawsonibacter Asaccharolyticus Abundance and Prevalence Across Multiple Cohorts.”</span> <em>Nature Microbiology</em>, November. <a href="https://doi.org/10.1038/s41564-024-01858-9">https://doi.org/10.1038/s41564-024-01858-9</a>.
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -583,7 +588,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","openEffect":"zoom","selector":".lightbox","closeEffect":"zoom","loop":true});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","closeEffect":"zoom","openEffect":"zoom","loop":true});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
