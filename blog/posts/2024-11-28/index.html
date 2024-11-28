@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Iara Souza">
-<meta name="dcterms.date" content="2024-05-16">
+<meta name="author" content="Andre Fonseca">
+<meta name="dcterms.date" content="2024-11-21">
 
-<title>Lexanomics Blog - How non-coding variants can explain developmental disorders</title>
+<title>Lexanomics Blog - Generative AI uncovering drug-omics assocations in type 2 Diabetes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -138,7 +138,7 @@ div.csl-indent {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">How non-coding variants can explain developmental disorders</h1>
+      <h1 class="title">Generative AI uncovering drug-omics assocations in type 2 Diabetes</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">awesome science</div>
               </div>
@@ -151,14 +151,14 @@ div.csl-indent {
       <div>
       <div class="quarto-title-meta-heading">Author</div>
       <div class="quarto-title-meta-contents">
-               <p>Iara Souza </p>
+               <p>Andre Fonseca </p>
             </div>
     </div>
       
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">May 16, 2024</p>
+        <p class="date">November 21, 2024</p>
       </div>
     </div>
     
@@ -177,29 +177,36 @@ div.csl-indent {
 
 
 
-<p>Coding variants, especially single-nucleotide variants, are genetic alterations occurring within the coding region of the genes. They are widely studied in human genomics given their relationship to human diseases, including rare Mendelian disorders and complex diseases. The effects of coding variants that result in a change of amino acids (e.g., missense and nonsense variants) can be promptly identified in the protein sequence, impacting the protein function. However, what are the effects of non-coding variants in human diseases?</p>
+<p>Generative AI has garnered significant attention in bioinformatics. Techniques like Generative Adversarial Networks (GANs) and Variational Autoencoders (VAEs) are at the forefront, reshaping how we analyze complex biological data.</p>
+<p>Today, let’s delve into Variational Autoencoders (VAEs) and their groundbreaking application in identifying drug–omics associations for type 2 diabetes.</p>
+<p>If you’re unfamiliar with the concept, VAEs are a type of neural network designed to simplify complex data. They transform high-dimensional datasets—such as multi-omics data—into a streamlined, more manageable “latent space.” This latent space captures essential patterns while filtering out noise, making it easier to uncover meaningful relationships.</p>
+<p>Now that we’ve covered the basics of VAEs, let’s introduce <strong>MOVE</strong> — a generative model for drug-omics association analysis.</p>
+<p><strong>MOVE (Multi-Omics Variational Autoencoders)</strong> is a deep-learning framework developed to tackle a critical challenge in bioinformatics: integrating multi-omics data.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="fig1.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1" title="Figure from @paper2 showing the impact of cis-non-coding variants on the mRNA."><img src="fig1.png" class="img-fluid figure-img" alt="Figure from Pérez-Agustín, Pinsach-Abuin, and Pagans (2020) showing the impact of cis-non-coding variants on the mRNA."></a></p>
-<figcaption>Figure from <span class="citation" data-cites="paper2">Pérez-Agustín, Pinsach-Abuin, and Pagans (<a href="#ref-paper2" role="doc-biblioref">2020</a>)</span> showing the impact of <em>cis</em>-non-coding variants on the mRNA.</figcaption>
+<p><a href="fig.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1" title="MOVE conceptual workflow. Illustration from @Allesoe2023-uo"><img src="fig.png" class="img-fluid figure-img" alt="MOVE conceptual workflow. Illustration from Allesøe et al. (2023)"></a></p>
+<figcaption>MOVE conceptual workflow. Illustration from <span class="citation" data-cites="Allesoe2023-uo">Allesøe et al. (<a href="#ref-Allesoe2023-uo" role="doc-biblioref">2023</a>)</span></figcaption>
 </figure>
 </div>
-<p>Developmental disorders are mental and/or physical disabilities typically starting in infancy. About 30-40% of individuals with DD are associated with a genetic diagnosis, indicating that the condition has also a multifactor background. In a new pre-print, Lord et al.&nbsp;analyzed the data of probands and relatives from Genomics England 100,000 Genomes and investigated the genetic architecture of DD <span class="citation" data-cites="lord2023noncoding">(<a href="#ref-lord2023noncoding" role="doc-biblioref">Lord et al. 2023</a>)</span>. In the study, the researchers focused on identifying rare non-coding variants in trans (inherited from the alternate parent to the coding variant) that could potentially act as the “second hit” in compound heterozygous genotypes associated with developmental disorders. They defined and analyzed various non-coding regulatory regions associated with the 793 identified recessive genes, including intronic regions, 5’UTRs, 3’UTRs, and candidate upstream promoter regions.</p>
-<p>After stringent bioinformatic filtering and quality control measures, the researchers identified rare non-coding variants in these regulatory regions that passed their criteria. These non-coding variants were assessed for their potential regulatory impact on gene expression and function. The study found that a subset of proband-variant pairs (36.3%) had at least one rare non-coding variant in trans that met the quality filters and could potentially contribute to the pathogenicity of the genotype.</p>
-<p>Furthermore, the researchers conducted functional testing using RNA sequencing to evaluate the impact of these non-coding variants on gene expression and splicing. This approach provided insights into how the identified non-coding variants may disrupt regulatory elements and contribute to the pathogenesis of developmental disorders in conjunction with coding variants in recessive genes. In addition, this study sheds light on the potential role of non-coding variants on the physiopathology of other conditions.</p>
+<p>In their study, Allesøe et al.&nbsp;utilized a comprehensive dataset encompassing genomics, transcriptomics, proteomics, metabolomics, microbiome profiles, and even clinical and lifestyle information.</p>
+<p>What makes MOVE stand out? It’s not just about analyzing data—it’s about making predictions and discovering hidden connections. By leveraging its generative capabilities, MOVE can simulate how drugs might affect patients who have not yet received them. Think of it as a virtual laboratory experiment, uncovering potential drug–omics interactions that would otherwise remain concealed in the complexity of the data.</p>
+<p>MOVE was applied to data from 789 newly diagnosed type 2 diabetes (T2D) patients, yielding transformative insights:</p>
+<ul>
+<li><strong>Revealing how metformin</strong> (a common diabetes medication) influences the gut microbiota, offering new perspectives on its effects beyond glycemic control.</li>
+<li><strong>Highlighting distinct molecular responses to statins</strong> (cholesterol-lowering drugs), specifically simvastatin and atorvastatin, which are often considered interchangeable.</li>
+<li>Detecting <strong>over 200%</strong> more drug–omics associations compared to traditional statistical methods.</li>
+</ul>
+<p><em>Are you exploring Generative AI in your research? If so, we’d love to hear about your experiences!</em></p>
 
 
 <div class="hidden" aria-hidden="true">
-<span class="glightbox-desc lightbox-desc-1">Figure from <span class="citation" data-cites="paper2">Pérez-Agustín, Pinsach-Abuin, and Pagans (<a href="#ref-paper2" role="doc-biblioref">2020</a>)</span> showing the impact of <em>cis</em>-non-coding variants on the mRNA.</span>
+<span class="glightbox-desc lightbox-desc-1">MOVE conceptual workflow. Illustration from <span class="citation" data-cites="Allesoe2023-uo">Allesøe et al. (<a href="#ref-Allesoe2023-uo" role="doc-biblioref">2023</a>)</span></span>
 </div>
 
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-lord2023noncoding" class="csl-entry" role="listitem">
-Lord, Jenny, Carolina J Oquendo, Alexandra Martin-Geary, Alexander JM Blakes, Elena Arciero, Silvia Domcke, Anne-Marie Childs, et al. 2023. <span>“Non-Coding Variants Are a Rare Cause of Recessive Developmental Disorders in Trans with Coding Variants.”</span> <em>medRxiv</em> 2023.06.23.23291805. https://doi.org/<a href="https://doi.org/10.1101/2023.06.23.23291805">https://doi.org/10.1101/2023.06.23.23291805</a>.
-</div>
-<div id="ref-paper2" class="csl-entry" role="listitem">
-Pérez-Agustín, Adrian, Mel·lina Pinsach-Abuin, and Sara Pagans. 2020. <span>“Role of Non-Coding Variants in Brugada Syndrome.”</span> <em>International Journal of Molecular Sciences</em> 21. <a href="https://doi.org/10.3390/ijms21228556">https://doi.org/10.3390/ijms21228556</a>.
+<div id="ref-Allesoe2023-uo" class="csl-entry" role="listitem">
+Allesøe, Rosa Lundbye, Agnete Troen Lundgaard, Ricardo Hernández Medina, Alejandro Aguayo-Orozco, Joachim Johansen, Jakob Nybo Nissen, Caroline Brorsson, et al. 2023. <span>“Discovery of Drug-Omics Associations in Type 2 Diabetes with Generative Deep-Learning Models.”</span> <em>Nat. Biotechnol.</em> 41 (3): 399–408.
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -590,7 +597,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","openEffect":"zoom","descPosition":"bottom","loop":true});
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","descPosition":"bottom","openEffect":"zoom","loop":true});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
