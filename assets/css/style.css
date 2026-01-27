@@ -1198,6 +1198,10 @@ section {
   text-align: justify;
 }
 
+.portfolio-details .portfolio-description ul {
+  text-align: justify;
+}
+
 .portfolio-details .gy-4 {
     display: flex;
     align-items: center;
